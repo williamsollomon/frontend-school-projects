@@ -1,18 +1,25 @@
-# School HTML Material Websites
+# Educational HTML Templates
 
-This repository contains a collection of simple frontend-only websites 
-created for school ICT (TIK) assignments.
+A collection of frontend-only websites created to present school learning 
+materials in HTML format, mainly for ICT (TIK) assignments.
 
-Each website is built using:
-- HTML
-- CSS
-- A little JavaScript
+## Tech Stack
+- HTML5
+- CSS3
+- Vanilla JavaScript
 
-The goal is to present school book materials in a clean, aesthetic, 
-and easy-to-understand website format, following teacher requirements 
-while keeping the design modern and student-friendly.
+## Features
+- Clean and structured layout
+- Easy-to-edit content for different subjects
+- Student-friendly and aesthetic design
+- No backend, no frameworks
 
-These projects are mainly used as:
-- School assignments
-- Learning practice for frontend web development
-- Reusable templates for educational websites
+## Purpose
+This repository is used for:
+- Learning frontend web development
+- Creating school assignment websites
+- Reusable educational website templates
+
+## Notes
+All content in this repository is simplified and adapted 
+for educational and learning purposes.
