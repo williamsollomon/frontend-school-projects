@@ -1,7 +1,7 @@
 # Educational HTML Templates
 
 A collection of frontend-only websites created to present school learning 
-materials in HTML format, mainly for ICT (TIK) assignments.
+materials in HTML format, mainly for ICT (TIK) assignments and my way to study web design
 
 ## Tech Stack
 - HTML5
