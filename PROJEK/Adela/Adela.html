@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ringkasan Bab 1 Adela</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700&display=swap');
+    :root{
+      --bg:#f7e9f3;
+      --panel:#c9d9f2;
+      --panel-dark:#b6c7e6;
+      --accent:#f2b5d4;
+      --accent2:#a7c7e7;
+      --text:#5a5a7a;
+      --white:#ffffff;
+    }
+
+    *{box-sizing:border-box; font-family:'Nunito', sans-serif;}
+
+    body{
+      margin:0;
+      background:linear-gradient(135deg,#fdebf5,#eaf2ff);
+      background: url('https://wallpapers.com/images/hd/pastel-pink-aesthetic-anime-6opstagdlkf08ock.jpg'); 
+      /* background: url('https://wallpapers.com/images/hd/pastel-aesthetic-anime-girl-sl754qazcr9ftt4k.jpg');  */
+      
+      color:var(--text);
+      min-height:100vh;
+    }
+
+    .desktop{
+      display:grid;
+      grid-template-columns:260px 1fr 300px;
+      gap:20px;
+      padding:20px;
+    }
+
+    /* LEFT PANEL */
+    .panel{
+      background:var(--panel);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .clock{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:12px;
+    }
+
+    .time-box{
+      background:var(--panel-dark);
+      border-radius:14px;
+      padding:14px;
+      text-align:center;
+      width:48%;
+      color:var(--white);
+      font-weight:bold;
+      font-size:22px;
+    }
+
+    .quote{
+      background:rgba(255,255,255,.6);
+      border-radius:14px;
+      padding:14px;
+      font-size:14px;
+      margin-bottom:16px;
+    }
+
+    .bars label{font-size:12px;}
+    .bar{
+      height:8px;
+      background:#fff;
+      border-radius:6px;
+      margin-bottom:10px;
+      overflow:hidden;
+    }
+
+    .bar span{
+      display:block;
+      height:100%;
+      background:var(--accent);
+      width:70%;
+    }
+
+    /* CENTER */
+    .content{
+      background:var(--white);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,.1);
+      position:relative;
+    }
+
+    .game-card{
+      font-family:'Press Start 2P', cursive;
+      width:280px;
+      margin:0 auto 24px;
+      background:var(--accent2);
+      border-radius:26px;
+      padding:18px;
+      text-align:center;
+      color:#fff;
+    }
+
+    .screen{
+      background:#8b7a7a;
+      border-radius:14px;
+      padding:12px;
+      margin-bottom:10px;
+    }
+
+    .screen h1{
+        margin:0; 
+        font-size:70px;
+    }
+    .buttons{
+      display:flex;
+      justify-content:space-around;
+      margin-top:10px;
+    }
+
+    .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      width:34px;height:34px;
+      border-radius:50%;
+      background:#6b5a5a;
+    }
+
+    .materi h1{
+      font-family:'Press Start 2P', cursive;
+      text-align:center;
+      margin-bottom:10px;
+    }
+
+    .materi section{
+      background:#f3f6ff;
+      border-radius:16px;
+      padding:16px;
+      margin-bottom:16px;
+    }
+
+    /* RIGHT */
+    .music img{
+      width:100%;
+      border-radius:16px;
+      margin-bottom:10px;
+    }
+
+    .player{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content:space-around;
+      margin-top:10px;
+    }
+
+    .icon{
+      width:36px;height:36px;
+      border-radius:10px;
+      background:var(--accent);
+    }
+
+    /* BOTTOM BAR */
+    .dock{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(120,100,120,.6);
+      backdrop-filter:blur(8px);
+      padding:10px 20px;
+      border-radius:20px;
+      display:flex;
+      gap:14px;
+    }
+
+    .dock .icon{background:#fff;}
+  </style>
+</head>
+<body>
+
+<div class="desktop">
+  <!-- LEFT -->
+  <div class="panel">
+    <div class="clock">
+      <div class="time-box">11</div>
+      <div class="time-box">19<br><small>AM</small></div>
+    </div>
+
+    <div class="quote">
+      "Tuliskan materi babmu dengan gaya kreatif agar belajar jadi menyenangkan."
+    </div>
+
+    <div class="bars">
+      <label>Progress Belajar</label>
+      <div class="bar"><span></span></div>
+      <label>Kerapian Catatan</label>
+      <div class="bar"><span style="width:85%"></span></div>
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="content">
+    <div class="game-card">
+      <div class="screen">
+        <h1>BAB 1</h1>
+      </div>
+      <div class="buttons">
+        <div class="btn">XII</div>
+        <div class="btn">MB</div>
+        <div class="btn">3</div>
+      </div>
+    </div>
+
+    <div class="materi">
+      <h1>Berpikir Komputasional</h1>
+      <section>
+        <h3>Pengertian</h3>
+        <p>Tuliskan pengertian materi bab di sini sesuai dengan buku pelajaran.</p>
+      </section>
+      <section>
+        <h3>Rumus / Konsep</h3>
+        <ul>
+          <li>Rumus atau poin penting pertama</li>
+          <li>Rumus atau poin penting kedua</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Contoh Soal</h3>
+        <p>Masukkan contoh soal dan pembahasannya.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="panel music">
+    <img src="https://i.pinimg.com/474x/9a/10/3a/9a103a946a82cfecba2a8356f8e6ee86.jpg" alt="cover" />
+    <strong>Daftar Isi</strong>
+    <div class="player">
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+    </div>
+  </div>
+</div>
+
+<div class="dock">
+  <div class="icon"></div>
+  <div class="icon"></div>
+  <div class="icon"></div>
+  <div class="icon"></div>
+</div>
+
+</body>
+</html>

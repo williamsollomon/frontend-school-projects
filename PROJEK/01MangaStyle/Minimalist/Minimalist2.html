@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Pembelajaran</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* background: #f5f5f5; */
+            background: rgb(71, 126, 255);
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .hero-section {
+            height: 100vh;
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ornamen Dekoratif */
+        .ornament {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .ornament-1 {
+            width: 100px;
+            height: 100px;
+            background: #ffd700;
+            top: 12%;
+            left: 8%;
+        }
+
+        .ornament-2 {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 3px solid #fff;
+            top: 25%;
+            right: 15%;
+        }
+
+        .ornament-3 {
+            width: 30px;
+            height: 30px;
+            background: #ffd700;
+            bottom: 30%;
+            left: 8%;
+        }
+
+        .ornament-4 {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 3px solid #ff2222;
+            bottom: 25%;
+            left: 15%;
+        }
+
+        .ornament-5 {
+            width: 35px;
+            height: 35px;
+            background: #ffd700;
+            top: 60%;
+            right: 20%;
+        }
+
+        /* Teks Besar di Background */
+        .big-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 280px;
+            font-weight: 900;
+            color: rgb(255, 217, 0);
+            letter-spacing: -10px;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+            line-height: 0.9;
+        }
+
+        /* Karakter Anime */
+        .character {
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 600px;
+            height: auto;
+        }
+
+        .character img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+        }
+
+
+        /* Teks Kecil Hiasan */
+        .small-text {
+            position: absolute;
+            color: rgb(231, 231, 231);
+            z-index: 3;
+        }
+
+        .small-text-1 {
+            top: 20%;
+            left: 12%;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .small-text-2 {
+            top: 22%;
+            left: 12%;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .small-text-3 {
+            bottom: 20%;
+            right: 15%;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .small-text-4 {
+            bottom: 17%;
+            right: 15%;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chapter-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .chapter-intro {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+
+        /* Card untuk Sub Bab */
+        .subchapter-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .subchapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .subchapter-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .subchapter-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .subchapter-content {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .subchapter-content p {
+            margin-bottom: 15px;
+        }
+
+        .subchapter-content ul, .subchapter-content ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .subchapter-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: white;
+            text-align: center;
+        }
+
+        .scroll-indicator p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(-45deg);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: rotate(-45deg) translateY(0);
+            }
+            40% {
+                transform: rotate(-45deg) translateY(10px);
+            }
+            60% {
+                transform: rotate(-45deg) translateY(5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .big-title {
+                font-size: 120px;
+            }
+            
+            .character {
+                width: 300px;
+            }
+            
+            .chapter-title {
+                font-size: 32px;
+            }
+            
+            .subchapter-card {
+                padding: 25px;
+            }
+            
+            .subchapter-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <!-- Ornamen -->
+        <div class="ornament ornament-1"></div>
+        <div class="ornament ornament-2"></div>
+        <div class="ornament ornament-3"></div>
+        <div class="ornament ornament-4"></div>
+        <div class="ornament ornament-5"></div>
+
+        <!-- Teks Besar Background -->
+        <!-- <div class="big-title">綾イ</div> -->
+        <div class="big-title">BAB 1</div>
+
+        <!-- Karakter Anime (Ganti dengan gambar kamu) -->
+        <div class="character">
+
+            <!-- GANTI src DENGAN PATH GAMBAR KARAKTER KAMU -->
+            <!-- <img src="character.png" alt="Character"> -->
+             <img src="Rei3.png">
+            <!-- <div class="character-placeholder">
+                Taruh gambar karakter PNG kamu di sini<br>
+                &lt;img src="character.png" alt="Character"&gt;
+            </div> -->
+        </div>
+
+        <!-- Teks Kecil Hiasan -->
+        <div class="small-text small-text-1">Rei</div>
+        <div class="small-text small-text-2">Ayanami</div>
+        <div class="small-text small-text-3">● First Child</div>
+        <div class="small-text small-text-4">Designation</div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <p>Scroll untuk melihat materi</p>
+            <div class="scroll-arrow"></div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <h1 class="chapter-title">BAB 1: Judul Bab Kamu</h1>
+        <p class="chapter-intro">
+            Ini adalah pengantar untuk bab ini. Kamu bisa menjelaskan secara singkat tentang apa yang akan dipelajari dalam bab ini.
+        </p>
+
+        <!-- Sub Bab 1 -->
+        <div class="subchapter-card">
+            <h2 class="subchapter-title">
+                <div class="subchapter-number">1.1</div>
+                Judul Sub Bab Pertama
+            </h2>
+            <div class="subchapter-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <ul>
+                    <li>Poin pertama dari penjelasan</li>
+                    <li>Poin kedua yang menjelaskan konsep</li>
+                    <li>Poin ketiga sebagai tambahan informasi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sub Bab 2 -->
+        <div class="subchapter-card">
+            <h2 class="subchapter-title">
+                <div class="subchapter-number">1.2</div>
+                Judul Sub Bab Kedua
+            </h2>
+            <div class="subchapter-content">
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                </p>
+                <p>
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                </p>
+                <ol>
+                    <li>Langkah pertama dalam proses</li>
+                    <li>Langkah kedua yang harus diikuti</li>
+                    <li>Langkah ketiga sebagai penutup</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Sub Bab 3 -->
+        <div class="subchapter-card">
+            <h2 class="subchapter-title">
+                <div class="subchapter-number">1.3</div>
+                Judul Sub Bab Ketiga
+            </h2>
+            <div class="subchapter-content">
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                </p>
+                <p>
+                    Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sub Bab 4 -->
+        <div class="subchapter-card">
+            <h2 class="subchapter-title">
+                <div class="subchapter-number">1.4</div>
+                Judul Sub Bab Keempat
+            </h2>
+            <div class="subchapter-content">
+                <p>
+                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                </p>
+                <p>
+                    Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tambahkan sub bab lainnya sesuai kebutuhan -->
+    </div>
+</body>
+</html>

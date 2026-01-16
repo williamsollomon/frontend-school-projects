@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB 1 Farrel MB 3</title>
+
+    <link href="https://fonts.googleapis.com/css2?
+        family=Poppins:wght@300;400;500;600;700&
+        family=JetBrains+Mono:wght@300;400;500;600;700&
+        family=Playfair+Display:wght@700;900&
+        display=swap" rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
+            --primary: #38bdf8;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-soft: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.75;
+        }
+
+        .top-nav {
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            background: #020617;
+            border-bottom: 1px solid #1e293b;
+            z-index: 100;
+        }
+
+        .nav-wrap {
+            z-index: 1000;
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            margin-left: 18px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #cbd5f5;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #ffffff;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            border-radius: 25px;
+            transform: scale(2);
+            color: var(--primary);
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 70px 4rem;
+            border-radius: 14px;
+        }
+
+        header {
+            margin-bottom: 80px;
+        }
+
+        .bab {
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            line-height: 4rem;
+            font-size: 5rem;
+            margin: 14px 0 20px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 28px;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #334155;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            padding: 22px;
+            margin: 26px 0;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 45px rgba(15,23,42,0.08);
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-top: 12px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 90px;
+            padding-top: 36px;
+            border-top: 1px solid var(--border-soft);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .ornamen1{
+            position: relative;
+            margin-bottom: -18rem;
+            z-index: 1;
+            left: 4rem;
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 0.5rem 0.5rem;
+            height: 300px;
+            transform: rotate(10deg);
+            width: 220px;
+            transition: all 0.3s ease;
+        }
+        
+        .ornamen1 img{
+            padding: 0.5rem 0.5rem;
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .ornamen1:hover{
+
+            transform: scale(1.05);
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="top-nav">
+        <div class="nav-wrap">
+            <div class="nav-title">Portal Materi Informatika</div>
+            <div class="nav-links">
+                <a href="#judul">Judul</a>
+                <a href="#1.1">Bab 1.1</a>
+                <a href="#1.2">Bab 1.2</a>
+                <a href="#1.3">Bab 1.3</a>
+                <a href="#1.4">Bab 1.4</a>
+                <a href="#1.5">Bab 1.5</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ornamen1">
+        <img src="https://i.pinimg.com/236x/b3/a4/77/b3a4775feacf47ffc9797818b51c9931.jpg">
+    </div>
+
+    <div class="page" id="judul">
+
+        <header>
+            <div class="bab">BAB   1</div>
+            <h1>Berpikir<br>Komputasional</h1>
+            <p class="subtitle">FARREL DAMOS PANDAPOTAN SIBUEA XII MB 3</p>
+        </header>
+
+        <div class="accent-line"></div>
+
+        <section id="1.1">
+            <h2>1.1 — Proses Pemikiran Komputasional</h2>
+            <div class="accent-line"></div>
+
+            <p>Berpikir komputasional dibangun dengan dasar dan batasan proses komputasi, baik yang dilakukan oleh manusia, mesin, dan komputer. Metode dan model komputasional memberikan kemampuan bagi setiap orang untuk memecahkan masalah dan merangkai sistem yang tidak dapat ditangani sendiri. Terdapat empat langkah yang dijadikan pilar untuk berpikir komputasional.</p>
+
+            <h3>A. Dekomposisi (Decomposition)</h3>
+            <p>Dekomposisi merupakan penguraian masalah atau sistem yang kompleks menjadi bagian-bagian kecil, sehingga lebih mudah untuk dipecahkan. Dengan mengelola masalah menjadi lebih kecil, dapat dilakukan identifikasi akar dari permasalahan tersebut dan membuat lebih terstruktur.</p>
+            
+            <div class="card">
+                <h4>Contoh: Memasak Nasi</h4>
+                <p>Memecahkan masalah besar menjadi masalah kecil:</p>
+                <ul>
+                    <li>Menyiapkan rice cooker</li>
+                    <li>Menyiapkan beras</li>
+                    <li>Menyiapkan air</li>
+                </ul>
+            </div>
+
+            <h3>B. Pengenalan Pola (Pattern Recognition)</h3>
+            <p>Pengenalan pola adalah mengidentifikasi suatu pola masalah yang dapat membantu menemukan metode efektif untuk memecahkan masalah. Umumnya, setiap masalah terdapat pola-pola tertentu untuk memecahkannya.</p>
+            
+            <div class="card">
+                <h4>Contoh: Pola Memasak Nasi</h4>
+                <ul>
+                    <li>Memasukkan beras</li>
+                    <li>Memasukkan air</li>
+                    <li>Menyalakan tombol rice cooker</li>
+                </ul>
+            </div>
+
+            <h3>C. Abstraksi (Abstraction)</h3>
+            <p>Abstraksi menggambarkan bagian yang mengambil inti dari suatu permasalahan dan mengabaikan yang tidak penting. Dalam berpikir komputasional, abstraksi lebih memfokuskan urutan yang menjadi skala prioritas pada bagian masalah yang penting untuk menemukan solusi.</p>
+            
+            <div class="card">
+                <h4>Contoh Abstraksi</h4>
+                <ul>
+                    <li>Cara mengoperasikan rice cooker</li>
+                    <li>Jumlah takaran beras dan air yang dibutuhkan</li>
+                </ul>
+            </div>
+
+            <h3>D. Algoritma (Algorithms)</h3>
+            <p>Algoritma adalah sebuah rencana atau langkah-langkah yang bersifat sistematis untuk memecahkan suatu masalah yang sedang terjadi. Melalui tahapan-tahapan yang dijalankan tersebut dapat diperkirakan proses dan hasil akhirnya dengan tepat.</p>
+            
+            <div class="card">
+                <h4>Algoritma Memasak Nasi dengan Rice Cooker</h4>
+                <ul>
+                    <li>Siapkan rice cooker, beras, dan air</li>
+                    <li>Masukkan beras ke dalam wadah</li>
+                    <li>Cuci beras yang terdapat dalam wadah hingga bersih</li>
+                    <li>Tuangkan air secukupnya</li>
+                    <li>Hidupkan rice cooker, tekan tanda "cook" hingga warna lampu berubah menjadi merah dan tunggu hingga matang</li>
+                    <li>Tunggu nasi hingga matang, hingga warna lampu berubah menjadi hijau</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="1.2">
+            <h2>1.2 — Algoritma Data</h2>
+            <div class="accent-line"></div>
+
+            <p>Dalam komputer, penyusunan algoritma efektif untuk mempercepat sebuah aplikasi bekerja. Algoritma data diperlukan untuk mencari sekumpulan data dengan menggunakan teknik dan cara tertentu. Oleh sebab itu, dalam semua program aplikasi hampir dapat ditemukan cara untuk mencari (searching) maupun mengurutkan (sorting).</p>
+
+            <h3>A. Teknik Pencarian (Searching)</h3>
+            <p>Teknik pencarian atau searching hampir tiap hari kita lakukan. Misalkan pada saat kita menggunakan search engine Google untuk mencari materi pelajaran. Mesin pencari Google membuat beberapa kategori pencarian, seperti pencarian umum, gambar, video, dan berita.</p>
+            
+            <div class="card">
+                <h4>Contoh Penggunaan Filetype di Google</h4>
+                <p>Dengan menambahkan perintah <strong>filetype:pdf</strong>, maka hasil pencarian yang keluar adalah semua yang berkaitan dengan kata kunci dokumen pdf. Jika menggunakan tambahan perintah <strong>filetype:doc</strong>, maka hasil yang keluar juga hanya dokumen doc.</p>
+                <p style="margin-top: 15px;"><strong>Contoh:</strong> "sekolah penggerak filetype:pdf"</p>
+            </div>
+
+            <h4>Contoh Kasus: Menebak Angka</h4>
+            <p>Dalam pencarian, kadang kita tidak tahu pedoman yang harus dilakukan, maka diperlukan kreativitas dalam penyelesaian. Semakin banyak data yang ada tentu pencarian yang dilakukan akan semakin kompleks.</p>
+            
+            <div class="card">
+                <h4>Proses Menebak Angka 9 (dari 1-20)</h4>
+                <p>Seorang pesulap mengatakan kepada para penonton, "Coba pikirkan sebuah angka ganjil antara 1-20 dan jangan beri tahu saya." Penonton hanya diberikan kesempatan menjawab tiga jawaban: "lebih besar", "lebih kecil", atau "tepat".</p>
+                <ul style="margin-top: 15px;">
+                    <li>Pesulap: "10" → Penonton: "lebih kecil"</li>
+                    <li>Pesulap: "6" → Penonton: "lebih besar"</li>
+                    <li>Pesulap: "8" → Penonton: "lebih besar"</li>
+                    <li>Pesulap: "Angka Anda 9"</li>
+                </ul>
+            </div>
+
+            <h3>B. Teknik Pengurutan (Sorting)</h3>
+            <p>Setelah melakukan teknik pencarian (searching) untuk menemukan sebuah bilangan, selanjutnya adalah mengurutkannya. Pengurutan dilakukan dengan dua cara, yaitu secara ascending (naik) dan descending (turun).</p>
+            
+            <p style="margin-top: 20px;">Pengurutan (sort) di komputer terdapat dua cara yaitu:</p>
+            <ul>
+                <li><strong>Pengurutan internal (internal sort):</strong> pengurutan terhadap sekumpulan data yang disimpan dalam media internal komputer yang dapat diakses setiap elemennya secara langsung</li>
+                <li><strong>Pengurutan eksternal (external sort):</strong> pengurutan data yang disimpan dalam memori sekunder, biasanya data bervolume besar sehingga tidak mampu untuk dimuat semuanya dalam memori</li>
+            </ul>
+
+            <h4>1. Bubble Sort</h4>
+            <p>Metode bubble sort merupakan algoritma pengurutan paling tua dan paling sederhana. Cara berpikir pengurutan ini dilakukan dengan membandingkan masing-masing komponen atau item yang ada dalam bentuk list secara berpasangan. Pengujian berpasangan dilakukan dengan cara satu per satu item tersebut ditukar sesuai dengan kondisinya.</p>
+            
+            <div class="card">
+                <h4>Proses Bubble Sort</h4>
+                <ul>
+                    <li>Pengujian dimulai dari bilangan yang pertama atau paling depan, apakah lebih besar atau lebih kecil</li>
+                    <li>Jika item pertama lebih besar maka digeser ke belakang, jika tidak maka dibiarkan</li>
+                    <li>Bandingkan item kedua dengan ketiga, dan jika lebih besar maka digeser ke kanan</li>
+                    <li>Ulangi terus sampai semua item tersusun</li>
+                </ul>
+                
+                <h4 style="margin-top: 25px;">Contoh: Mengurutkan 80, 60, 50, 40, 70, 30</h4>
+                <p><strong>Langkah 1:</strong></p>
+                <ul>
+                    <li>80, 60, 50, 40, 70, 30 → 60, 80, 50, 40, 70, 30</li>
+                    <li>60, 80, 50, 40, 70, 30 → 60, 50, 80, 40, 70, 30</li>
+                    <li>60, 50, 80, 40, 70, 30 → 60, 50, 40, 80, 70, 30</li>
+                    <li>60, 50, 40, 80, 70, 30 → 60, 50, 40, 70, 80, 30</li>
+                    <li>60, 50, 40, 70, 80, 30 → 60, 50, 40, 70, 30, 80</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Hasil akhir:</strong> 30, 40, 50, 60, 70, 80</p>
+            </div>
+
+            <h4>2. Insertion Sort</h4>
+            <p>Pengurutan dengan menggunakan teknik insertion sort dilakukan dengan memilah item yang akan diurutkan menjadi dua bagian, yaitu item yang belum diurutkan dan item yang sudah diurutkan. Elemen pertama diambil dari item yang belum diurutkan dan kemudian diletakkan sesuai posisinya pada bagian lain dari item yang telah diurutkan.</p>
+            
+            <div class="card">
+                <h4>Karakteristik Insertion Sort</h4>
+                <ul>
+                    <li>Dapat mengurutkan data dari kecil ke besar (ascending) maupun dari besar ke kecil (descending)</li>
+                    <li>Tidak cocok untuk data berukuran besar karena kompleksitas waktunya adalah O(n²)</li>
+                    <li>Proses pengurutan dilakukan secara berulang dengan menyisipkan elemen ke posisi yang tepat</li>
+                </ul>
+                
+                <h4 style="margin-top: 25px;">Contoh: Mengurutkan 70, 60, 30, 50, 40, 20</h4>
+                <p><strong>Langkah 1:</strong> (70, 60, 30, 50, 40, 20) → (60, 70, 30, 50, 40, 20)</p>
+                <p><strong>Langkah 2:</strong> (60, 70, 30, 50, 40, 20) → (30, 60, 70, 50, 40, 20)</p>
+                <p><strong>Langkah 3:</strong> (30, 60, 70, 50, 40, 20) → (30, 50, 60, 70, 40, 20)</p>
+                <p><strong>Langkah 4:</strong> (30, 50, 60, 70, 40, 20) → (30, 40, 50, 60, 70, 20)</p>
+                <p><strong>Langkah 5:</strong> (30, 40, 50, 60, 70, 20) → (20, 30, 40, 50, 60, 70)</p>
+            </div>
+
+            <h4>3. Quick Sort</h4>
+            <p>Quick Sort merupakan jenis algoritma yang berdasar pada pola divide and conquer. Algoritma Quick Sort merupakan algoritma untuk mengurutkan data dengan pendekatan rekursif. Proses pengurutan dilakukan dengan memecah kumpulan data menjadi dua bagian berdasarkan nilai pivot yang dipilih.</p>
+            
+            <div class="card">
+                <h4>Langkah-langkah Quick Sort</h4>
+                <ul>
+                    <li><strong>Divide:</strong> memilah rangkaian data menjadi dua sub-rangkaian</li>
+                    <li><strong>Conquer:</strong> mengurutkan elemen pada sub-rangkaian secara rekursif</li>
+                </ul>
+                <p style="margin-top: 15px;">Pada prinsipnya, nilai pivot yang dipilih akan ditempatkan pada posisinya di setiap akhir proses partisi. Proses pengurutan dilanjutkan secara rekursif untuk mengurutkan data bagian kiri dan kanan dari pivot.</p>
+            </div>
+
+            <h4>4. Merge Sort</h4>
+            <p>Merge sort merupakan algoritma yang dilakukan dengan tiga langkah dengan pola divide and conquer.</p>
+            
+            <div class="card">
+                <h4>Langkah-langkah Merge Sort</h4>
+                <ul>
+                    <li><strong>Divide:</strong> memilah elemen-elemen dari rangkaian data menjadi dua bagian</li>
+                    <li><strong>Conquer:</strong> setiap bagian dengan memanggil prosedur merge sort secara rekursif</li>
+                    <li><strong>Kombinasi:</strong> gabungan antara dua bagian secara rekursif untuk mendapatkan rangkaian data berurutan</li>
+                </ul>
+                <p style="margin-top: 15px;">Proses rekursif akan berhenti jika sudah mencapai elemen dasar (tepat satu elemen). Sisa pengurutan satu elemen tersebut menandakan bahwa bagian tersebut telah terurut sesuai rangkaian.</p>
+            </div>
+
+            <h4>5. Selection Sort</h4>
+            <p>Selection sort merupakan teknik sorting yang paling sederhana. Algoritma ini menemukan elemen terkecil dalam array dan menukarnya (swap) dengan elemen yang ada di posisi pertama, kemudian mencari elemen terkecil berikutnya dan menukarnya dengan elemen di posisi kedua, dan seterusnya.</p>
+            
+            <div class="card">
+                <h4>Contoh: Mengurutkan 14, 34, 28, 11, 36, 20, 43, 45</h4>
+                <p><strong>Langkah 1:</strong> Mencari elemen terkecil (11)</p>
+                <p>14, 34, 28, 11, 36, 20, 43, 45 → 11, 34, 28, 14, 36, 20, 43, 45</p>
+                <p style="margin-top: 10px;"><strong>Hasil akhir:</strong> 11, 14, 20, 28, 34, 36, 43, 45</p>
+            </div>
+        </section>
+
+        <section id="1.3">
+            <h2>1.3 — Struktur Data</h2>
+            <div class="accent-line"></div>
+
+            <p>Struktur data dalam ilmu komputer adalah seperangkat elemen data yang mengatur cara penyimpanan dan penyusunan data di dalam media penyimpanan komputer agar data tersebut dapat digunakan secara efisien. Tujuan utamanya untuk mengurangi kompleksitas ruang dan waktu. Secara umum, terdapat dua jenis antrean dalam proses penyimpanan dan pengambilan, yaitu stack dan queue.</p>
+
+            <h3>A. Antrean (Queue)</h3>
+            <p>Teknik queue merupakan teknik di mana data yang dimasukkan terlebih dahulu akan keluar duluan (FIFO - First In First Out). Sebuah antrean, ke kanan terjadi dimulai dari angka 1, 2, 3, 4, 5, maka saat bergerak ke kanan urutannya tetap menjadi 1, 2, 3, 4, 5.</p>
+            
+            <div class="card">
+                <h4>Contoh Queue (FIFO)</h4>
+                <p><strong>Data awal:</strong> 5, 4, 3, 2, 1</p>
+                <p>Karena angka 1 duluan masuk (dari kanan), maka ia akan keluar duluan:</p>
+                <ul>
+                    <li>5, 4, 3, 2, 1 → keluar: 1</li>
+                    <li>5, 4, 3, 2 → keluar: 2</li>
+                    <li>5, 4, 3 → keluar: 3</li>
+                    <li>5, 4 → keluar: 4</li>
+                    <li>5 → keluar: 5</li>
+                </ul>
+            </div>
+
+            <h3>B. Tumpukan (Stack)</h3>
+            <p>Cara penyimpanan yang kedua dikenal dengan istilah stack atau teknik tumpukan. Dengan teknik ini, data yang ada di tumpukan diambil satu per satu dan dipindahkan ke tumpukan lain hingga habis. Data yang tadinya berada di atas, posisinya menjadi di paling bawah.</p>
+            
+            <div class="card">
+                <h4>Prinsip Stack (LIFO)</h4>
+                <p>Prinsip dan cara kerja pada stack adalah <strong>LIFO (Last In First Out)</strong>, "masuk terakhir keluar pertama".</p>
+                <p style="margin-top: 15px;">Pada stack terdapat satu pintu masuk dan di ujung lain tidak ada pintu sehingga harus keluar melalui pintu yang sama, satu per satu dan berurutan.</p>
+            </div>
+        </section>
+
+        <section id="1.4">
+            <h2>1.4 — Pemecahan Masalah dengan Algoritma</h2>
+            <div class="accent-line"></div>
+
+            <p>Algoritma menjadi salah satu tahapan atau metode dalam berpikir komputasional yang perlu dipelajari dengan baik untuk menyelesaikan masalah dengan efektif dan efisien. Algoritma menjadi tahap terakhir dalam berpikir komputasional setelah dekomposisi, pengenalan pola dan abstraksi.</p>
+
+            <h3>A. Larik (Array)</h3>
+            <p>Larik disebut juga dengan array. Pada kehidupan sehari-hari banyak kita jumpai kondisi yang sama dengan larik. Di dalamnya terdiri atas susunan yang sama. Contohnya adalah gerbong kereta api beserta dengan isi yang ada di dalamnya.</p>
+            
+            <div class="card">
+                <h4>Library Penting dalam Pemrograman C++</h4>
+                <ul>
+                    <li><strong>#include &lt;vector&gt;</strong> - untuk deklarasi vektor</li>
+                    <li><strong>#include <stdio.h></strong> - untuk operasi input output</li>
+                    <li><strong>#include <iostream.h></strong> - berisi cout, cin, dan endl</li>
+                </ul>
+                <h4 style="margin-top: 25px;">Fungsi-fungsi Utama</h4>
+            <ul>
+                <li><strong>cout:</strong> fungsi keluaran untuk menampilkan data ke layar</li>
+                <li><strong>cin:</strong> fungsi masukan untuk memasukkan data numerik dan karakter</li>
+                <li><strong>endl:</strong> fungsi untuk perintah newline atau pindah baris</li>
+            </ul>
+        </div>
+
+        <h3>B. Karakter dan String</h3>
+        <p>Dalam pemrograman ada tipe karakter, yaitu berupa tulisan atau huruf. Tipe ini dikenal sebagai karakter atau string. Dalam bahasa C++, tipe string digunakan untuk menampung berupa huruf.</p>
+        
+        <div class="card">
+            <h4>Catatan Penting String di C++</h4>
+            <p>Pada C++, string "B" sebagai huruf kapital juga berbeda dengan "b" sebagai huruf kecil (case-sensitive).</p>
+            <p style="margin-top: 15px;">Oleh karena itu, dalam C++ dilengkapi dengan fungsi-fungsi string yang disimpan dalam pustaka <strong>&lt;string.h&gt;</strong>.</p>
+        </div>
+    </section>
+
+    <section id="1.5">
+        <h2>1.5 — Jaringan Komputer</h2>
+        <div class="accent-line"></div>
+
+        <p>Secara umum, pengertian dari jaringan komputer adalah sebuah sistem yang terdiri atas komputer dan perangkat jaringan lainnya yang dihubungkan secara elektronik antarkomputer untuk saling berkomunikasi dengan bertukar data dan berbagi sumber daya satu sama lain membentuk suatu grup.</p>
+
+        <h3>A. Model Jaringan Komputer</h3>
+
+        <h4>1. Macam-Macam Jaringan Komputer</h4>
+
+        <div class="card">
+            <h4>a. Personal Area Network (PAN)</h4>
+            <p>Jenis jaringan ini mencakup wilayah yang lebih kecil, misalnya pada kantor dan rumah. Umumnya digunakan untuk keperluan internet, printer, dan tidak memerlukan sumber yang besar.</p>
+        </div>
+
+        <div class="card">
+            <h4>b. Local Area Network (LAN)</h4>
+            <p>LAN adalah jaringan yang digunakan untuk menghubungkan perangkat-perangkat komputer dalam area geografis yang terbatas, seperti rumah, sekolah, kantor dalam jangkauan yang relatif kecil.</p>
+        </div>
+
+        <div class="card">
+            <h4>c. Metropolitan Area Network (MAN)</h4>
+            <p>MAN adalah jaringan yang menghubungkan antara satu perangkat komputer dengan perangkat yang lain dalam ruang lingkup kota pada jaringan yang sama.</p>
+        </div>
+
+        <div class="card">
+            <h4>d. Wide Area Network (WAN)</h4>
+            <p>Jaringan WAN merupakan kumpulan dari LAN yang tersebar secara geografis. WAN menggunakan teknologi seperti ATM, X.25, dan Frame Relay untuk konektivitas jarak yang lebih jauh.</p>
+        </div>
+
+        <div class="card">
+            <h4>e. Wireless Local Area Network (WLAN)</h4>
+            <p>WLAN merupakan jaringan yang mirip dengan LAN, namun tidak membutuhkan kabel dalam menghubungkan banyak perangkat. Menggunakan teknologi wireless seperti WiFi.</p>
+        </div>
+
+        <div class="card">
+            <h4>f. Virtual Private Network (VPN)</h4>
+            <p>VPN adalah jaringan yang dapat digunakan untuk membuat kegiatan internet pengguna menjadi lebih aman dan tak bisa dilacak. VPN memungkinkan koneksi internet pengguna terhubung ke suatu jaringan pribadi.</p>
+        </div>
+
+        <h4>2. Topologi Jaringan Komputer</h4>
+        <p>Topologi jaringan komputer merupakan metode atau cara yang digunakan untuk menghubungkan atau membentuk jaringan pada komputer yang satu dengan komputer lainnya.</p>
+
+        <div class="card">
+            <h4>a. Topologi BUS</h4>
+            <p>Topologi yang menggunakan jaringan berbasis kabel coaxial pada sepanjang node client dan konektor.</p>
+            
+            <p style="margin-top: 15px;"><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Penambahan client mudah dilakukan</li>
+                <li>Mudah digunakan dan sangat sederhana</li>
+                <li>Biaya instalasi murah</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Sering terjadi tabrakan arus data</li>
+                <li>Pengiriman dan penerimaan data kurang efisien</li>
+                <li>Sulit untuk dikembangkan</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>b. Topologi Ring (Cincin)</h4>
+            <p>Topologi yang menghubungkan komputer dalam rangkaian berbentuk melingkar seperti cincin.</p>
+            
+            <p style="margin-top: 15px;"><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Biaya instalasi murah</li>
+                <li>Performa koneksi cukup baik</li>
+                <li>Instalasi dan konfigurasi mudah</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Troubleshooting rumit</li>
+                <li>Rentan terjadi tabrakan arus data</li>
+                <li>Jika salah satu koneksi bermasalah, seluruh jaringan terputus</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>c. Topologi Star (Bintang)</h4>
+            <p>Topologi berbentuk bintang yang menggunakan hub atau switch untuk koneksi antar-client.</p>
+            
+            <p style="margin-top: 15px;"><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Jaringan tetap berjalan meski salah satu komputer bermasalah</li>
+                <li>Tingkat keamanan data cukup baik</li>
+                <li>Mudah mendeteksi masalah</li>
+                <li>Lebih fleksibel</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Biaya mahal karena menggunakan banyak kabel</li>
+                <li>Tergantung pada terminal pusat (hub/switch)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>d. Topologi Tree (Pohon)</h4>
+            <p>Hasil penggabungan dari topologi bus dan topologi star, berbentuk seperti akar pohon.</p>
+            
+            <p style="margin-top: 15px;"><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Susunan terpusat secara hierarki</li>
+                <li>Mudah dikembangkan menjadi jaringan yang lebih luas</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Kinerja jaringan lambat</li>
+                <li>Penggunaan kabel sangat banyak</li>
+                <li>Sangat tergantung pada kabel backbone</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>e. Topologi Mesh</h4>
+            <p>Topologi yang menggunakan rute banyak dan kabel tunggal sehingga proses pengiriman data lebih cepat.</p>
+            
+            <p style="margin-top: 15px;"><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Bandwidth limit besar</li>
+                <li>Security data sangat baik</li>
+                <li>Tidak terjadi tabrakan arus data</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Membutuhkan kabel sangat banyak</li>
+                <li>Biaya instalasi sangat mahal</li>
+                <li>Instalasi sangat rumit</li>
+            </ul>
+        </div>
+
+        <h4>3. Komponen Perangkat Jaringan Komputer</h4>
+
+        <section>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">SERVER</span>
+                    <span class="stat-label">Komponen pertama yang dilengkapi spesifikasi untuk melayani kebutuhan klien atau komputer lainnya. Berfungsi sebagai tempat menyimpan informasi dan mengelola jaringan komputer.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Wireless LAN Interface</span>
+                    <span class="stat-label">Perangkat yang terpasang pada komputer untuk terhubung ke area hotspot wireless. Standar keamanan: WEP, WPA, dan WPA2</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">MODEM</span>
+                    <span class="stat-label">Perangkat untuk memodulasi data dari listrik ke gelombang elektromagnetik. Dapat mengubah data analog menjadi digital atau sebaliknya.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">KABEL</span>
+                    <span class="stat-label">Media transmisi untuk menghubungkan komputer. Jenis kabel:<br>
+                        <strong>Kabel Coaxial:</strong> terdiri atas dua penghantar<br>
+                        <strong>Kabel Twisted Pair:</strong> UTP, FTP, STP<br>
+                        <strong>Kabel Fiber Optik:</strong> terbuat dari serat kaca atau plastik<br>
+                    </span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">HUB & SWITCH</span>
+                    <span class="stat-label">Berfungsi untuk menghubungkan dua komputer atau lebih. Hub hanya dibutuhkan jika menggunakan kabel UTP.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">REPEATER</span>
+                    <span class="stat-label">Berfungsi untuk menjaga agar proses transmisi data tetap stabil dan tidak mengalami degradasi dalam jarak tertentu.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">BRIDGE</span>
+                    <span class="stat-label">Bertugas untuk mengirimkan paket-paket data dengan kemampuan membagi traffic ke segmen-segmen.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" >ROUTER</span>
+                    <span class="stat-label">Digunakan untuk menghubungkan user LAN dengan koneksi internet, memiliki fungsi routing untuk memilih rute terbaik dalam jaringan.</span>
+                </div>
+            </div>
+        </section>
+
+        <h4>4. Manfaat Jaringan Komputer</h4>
+
+        <div class="card">
+            <h4>a. Berbagi Dokumen dan Menyampaikan Informasi secara Cepat</h4>
+            <p>Pengguna dapat membagikan dokumen ke perangkat lain tanpa perlu menyalin secara manual.</p>
+        </div>
+
+        <div class="card">
+            <h4>b. Meningkatkan Keamanan dan Manajemen Data</h4>
+            <p>Penyimpanan data di server dengan sistem pencadangan otomatis mengurangi risiko kehilangan data.</p>
+        </div>
+
+        <div class="card">
+            <h4>c. Memudahkan dalam Berkomunikasi</h4>
+            <p>Jaringan komputer memudahkan komunikasi dengan orang lain yang berbeda geografis secara cepat dan akurat.</p>
+        </div>
+
+        <div class="card">
+            <h4>d. Memudahkan Akses Data dari Jarak Jauh (Remote)</h4>
+            <p>Dengan cloud hosting atau remote desktop, file penting dapat diakses dari mana saja.</p>
+        </div>
+
+        <h3>B. Pengiriman Data Antarperangkat dalam Jaringan Komputer</h3>
+        <p>Protokol jaringan adalah aturan yang memudahkan interaksi antarsistem pada komputer.</p>
+
+        <h4>Jenis-jenis Protokol Jaringan</h4>
+        <ul>
+            <li><strong>TCP/IP</strong> (Transmission Control Protocol/Internet Protocol)</li>
+            <li><strong>MQTT</strong> (Message Queueing Telemetry Transport)</li>
+            <li><strong>DNS</strong> (Domain Name System)</li>
+            <li><strong>SLIP</strong> (Serial Line Internet Protocol)</li>
+            <li><strong>PPP</strong> (Point-to-Point Protocol)</li>
+            <li><strong>REST</strong> (Representional State Transfer)</li>
+            <li><strong>HTTP</strong> (Hypertext Transfer Protocol)</li>
+            <li><strong>HTTPS</strong> (Hypertext Transfer Protocol Secure)</li>
+            <li><strong>FTP</strong> (File Transfer Protocol)</li>
+        </ul>
+
+        <h4>OSI Layer (7 Lapisan)</h4>
+        <div class="card">
+            <ul>
+                <li><strong>Layer 7 - Application:</strong> Interaksi antara pengguna dengan aplikasi</li>
+                <li><strong>Layer 6 - Presentation:</strong> Mengubah format data (enkripsi, kompresi)</li>
+                <li><strong>Layer 5 - Session:</strong> Durasi waktu komunikasi antarperangkat</li>
+                <li><strong>Layer 4 - Transport:</strong> Transportasi data dan mengendalikan alur komunikasi</li>
+                <li><strong>Layer 3 - Network:</strong> Menentukan jalur terbaik (routing)</li>
+                <li><strong>Layer 2 - Data Link:</strong> Mengatur transmisi data antara dua perangkat</li>
+                <li><strong>Layer 1 - Physical:</strong> Mengatur transmisi sinyal elektrik, optik, atau radio</li>
+            </ul>
+        </div>
+
+        <h3>C. Permasalahan Jaringan Komputer</h3>
+        <p>Troubleshooting jaringan adalah melakukan serangkaian langkah untuk meminimalisir potensi masalah satu per satu sebelum menemukan sumber masalah utama.</p>
+
+        <h4>Masalah-masalah yang Sering Terjadi</h4>
+        <ul>
+            <li>Kesalahan Memperoleh IP Address</li>
+            <li>Kerusakan Kabel dan Konektor Jaringan</li>
+            <li>Kerusakan pada Switch atau HUB</li>
+            <li>Terkena Virus Komputer</li>
+            <li>Koneksi Lambat</li>
+            <li>Connection Errors dan Network Connection</li>
+            <li>Status Connected tetapi Tidak Dapat Mengakses Internet</li>
+            <li>Network Interface Card (NIC) Disabled</li>
+            <li>Limited or No Connectivity Status</li>
+            <li>Kabel Terputus atau Lepas</li>
+            <li>Wireless Adapter Tidak Dapat Terhubung</li>
+        </ul>
+
+        <h3>D. Perawatan Jaringan Komputer</h3>
+
+        <div class="card">
+            <h4>1. Perawatan Harian</h4>
+            <ul>
+                <li>Mengaktifkan komputer dengan prosedur benar</li>
+                <li>Matikan komputer dengan prosedur benar</li>
+                <li>Bersihkan bagian luar komputer dari debu</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>2. Perawatan Mingguan</h4>
+            <ul>
+                <li>Hapus file yang tidak diperlukan</li>
+                <li>Lakukan scan hardisk</li>
+                <li>Lakukan defragmentasi</li>
+                <li>Gunakan tune up program</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>3. Perawatan Bulanan</h4>
+            <ul>
+                <li>Update antivirus dan scan semua isi hardisk</li>
+                <li>Delete/uninstall program yang tidak digunakan</li>
+                <li>Bersihkan keyboard, monitor, perangkat peripheral</li>
+                <li>Ganti semua password</li>
+                <li>Cek seluruh bagian jaringan</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>4. Perawatan Enam Bulanan</h4>
+            <ul>
+                <li>Bersihkan semua perangkat dari debu</li>
+                <li>Cek semua jaringan</li>
+                <li>Buka CPU dan monitor, bersihkan dari debu</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>5. Perawatan Tahunan</h4>
+            <ul>
+                <li>Instal ulang hardisk dengan software baru</li>
+                <li>Pastikan semua file bebas dari virus</li>
+                <li>Ganti kabel dan konektor yang rusak</li>
+            </ul>
+        </div>
+
+        <div class="card" style="margin-top: 40px;">
+            <h4>Tips Perawatan Umum</h4>
+            <ul>
+                <li>Hidupkan dan matikan komputer dengan prosedur benar</li>
+                <li>Gunakan stabilizer</li>
+                <li>Jauhkan dari sinar matahari dan air</li>
+                <li>Rapikan perkabelan</li>
+                <li>Gunakan UPS</li>
+                <li>Backup data penting</li>
+                <li>Gunakan password</li>
+                <li>Update antivirus secara rutin</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section>
+        <div style="text-align: center; margin-top: 60px;">
+            <div class="accent-line" style="margin: 0 auto 30px;"></div>
+            <p style="font-size: 16px; text-transform: uppercase; letter-spacing: 0.2em; color: #999;">
+                end
+            </p>
+            <p style="font-size: 48px; font-family: 'Playfair Display', serif; font-weight: 900;">
+                TERIMA KASIH
+            </p>
+        </div>
+    </section>
+
+        <footer>
+            <p>SMA Santo Thomas 1 Medan</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

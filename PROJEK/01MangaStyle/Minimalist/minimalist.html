@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hokkaido — Reading Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#7ec9e6;
+  --deep-blue:#2f6fdc;
+  --soft-blue:#eaf6fb;
+  --text:#1f2937;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(to bottom,var(--blue),#fff 55%);
+  color:var(--text);
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  padding:80px 10%;
+}
+
+.hero h1{
+  font-size:clamp(64px,12vw,150px);
+  font-weight:800;
+  letter-spacing:4px;
+  color:white;
+}
+
+.hero span{
+  font-size:18px;
+  color:white;
+  opacity:.85;
+}
+
+/* ===== IMAGE PLACEHOLDER ===== */
+.illustration{
+  margin:80px auto;
+  max-width:900px;
+  height:260px;
+  position:relative;
+}
+
+.store-img{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:80%;
+  max-height:160px;
+  object-fit:contain;
+}
+
+.truck-img{
+  position:absolute;
+  bottom:10px;
+  right:12%;
+  width:120px;
+  object-fit:contain;
+}
+
+/* ===== TAGLINE ===== */
+.tagline{
+  display:flex;
+  justify-content:space-between;
+  margin-top:30px;
+  color:#2563eb;
+  font-size:14px;
+}
+
+/* ===== CONTENT ===== */
+.content{
+  padding:100px 10%;
+  background:white;
+}
+
+.jp{
+  font-size:72px;
+  font-weight:800;
+  color:#2563eb;
+  line-height:1;
+}
+
+.desc{
+  max-width:320px;
+  margin-left:auto;
+  color:#2563eb;
+  font-size:14px;
+}
+
+/* ===== CARDS ===== */
+.cards{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:var(--soft-blue);
+  padding:28px;
+  border-radius:16px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.card h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:14px;
+  line-height:1.6;
+  opacity:.85;
+}
+
+.read{
+  margin-top:16px;
+  display:inline-block;
+  color:var(--deep-blue);
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:40px;
+  text-align:center;
+  font-size:12px;
+  color:#64748b;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>HOKKAIDO</h1>
+  <span>Japan</span>
+
+  <div class="illustration">
+    <!-- GANTI FILE GAMBAR DI SINI -->
+    <img src="https://img.freepik.com/premium-photo/pixel-art-illustration-small-japanese-convenience-store-city-setting_1282444-48943.jpg" alt="Store Placeholder" class="store-img">
+    <img src="truck.png" alt="Truck Placeholder" class="truck-img">
+  </div>
+
+  <div class="tagline">
+    <span>never too</span>
+    <span>far away</span>
+    <span>always there</span>
+  </div>
+</section>
+
+<section class="content">
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+    <div class="jp">コン<br>ビニ</div>
+    <p class="desc">
+      the omnipresent konbini will always be there for you.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>📘 Materi 1</h3>
+      <p>Isi materi utama kamu di sini. Panjang? Aman. Ini website ramah scroll.</p>
+      <a class="read" href="#">Read more →</a>
+    </div>
+
+    <div class="card">
+      <h3>📗 Materi 2</h3>
+      <p>Cocok buat e-book, rangkuman pelajaran, atau catatan pribadi.</p>
+      <a class="read" href="#">Read more →</a>
+    </div>
+
+    <div class="card">
+      <h3>📙 Materi 3</h3>
+      <p>Desain kalem, fokus baca. Otak nggak overheating.</p>
+      <a class="read" href="#">Read more →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Minimalist reading page • Japan aesthetic 🇯🇵
+</footer>
+
+</body>
+</html>

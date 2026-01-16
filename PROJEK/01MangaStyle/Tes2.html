@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAB 2 - Literasi Digital dan Pemanfaatan Teknologi Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #111;
+      background: url('https://cdna.artstation.com/p/assets/images/images/041/512/646/large/nikku-kun-denji-wallpaper.jpg?1631896783');
+      font-family: 'Inter', sans-serif;
+    }
+    .page {
+      width: 1200px;
+      margin: 40px auto;
+      background: #f5f5f5;
+      border: 12px solid #000;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+    }
+
+    /* HEADER STRIP */
+    .header {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      padding: 8px;
+      border-bottom: 6px solid #000;
+    }
+    .header .box {
+      background: #e0e0e0;
+      border: 3px solid #000;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      padding: 5px;
+    }
+
+    /* MAIN LEFT */
+    .main {
+      padding: 20px;
+      position: relative;
+      overflow-y: auto;
+      max-height: 2000px;
+    }
+    .label {
+      background: #000;
+      color: #fff;
+      display: inline-block;
+      padding: 6px 12px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .subtitle {
+      margin-top: 10px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .content-section {
+      margin-top: 30px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .content-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-left: 6px solid #000;
+      padding-left: 15px;
+    }
+
+    .content-section h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .content-section h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .content-section h5 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .content-section p {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .content-section ul, .content-section ol {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .content-section li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    /* RIGHT COLUMN */
+    .side {
+      border-left: 6px solid #000;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      max-height: 2000px;
+    }
+    .side-box {
+      border: 4px solid #000;
+      background: #fafafa;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .side-box h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #000;
+      padding-bottom: 5px;
+    }
+    .handwritten {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+    .footer {
+      grid-column: 1 / -1;
+      border-top: 6px solid #000;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .footer .panel {
+      height: 120px;
+      border: 3px solid #000;
+      background: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      padding: 10px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1300px) {
+      .page { width: 95%; }
+    }
+
+    /* DECORATIVE SCROLLING MANGA PANELS */
+    .floating-panels {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .panel-float {
+      position: absolute;
+      width: 90px;
+      height: 60px;
+      background: #f2f2f2;
+      border: 3px solid #000;
+      opacity: 0.9;
+    }
+    .panel-float:hover {
+      opacity: 1;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border: 3px solid #000;
+      padding: 15px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING DECORATIVE PANELS -->
+  <div class="floating-panels" id="floatingPanels">
+    <div class="panel-float" style="top:10%;left:5%;"><img src="https://embed.pixiv.net/artwork.php?illust_id=135798238&mdate=1759410572" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="panel-float" style="top:30%;left:80%;"></div>
+    <div class="panel-float" style="top:55%;left:15%;"></div>
+    <div class="panel-float" style="top:75%;left:70%;"></div>
+    <div class="panel-float" style="top:20%;left:45%;"></div>
+  </div>
+
+  <div class="page">
+    <!-- HEADER STRIP -->
+    <div class="header">
+      <div class="box">LITERASI DIGITAL</div>
+      <div class="box">TEKNOLOGI</div>
+      <div class="box">HUKUM DIGITAL</div>
+      <div class="box">KEAMANAN</div>
+      <div class="box">PERBANKAN</div>
+      <div class="box">E-COMMERCE</div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <div class="label">INFORMATIKA - MATERI PEMBELAJARAN</div>
+      <div class="title">BAB 2</div>
+      <div class="subtitle">LITERASI DIGITAL DAN PEMANFAATAN TEKNOLOGI DIGITAL</div>
+
+      <div class="content-section">
+        <h2>2.1 Perkembangan Literasi Digital</h2>
+        
+        <p>Saat ini perkembangan teknologi semakin pesat, hal tersebut telah memberikan banyak kemajuan dan kemudahan bagi kehidupan manusia. Segala kegiatan dapat secara mudah dilakukan hanya dengan memanfaatkan komputer dan internet. Melalui hal tersebut, segala jenis informasi juga dapat tersebar luas secara mudah. Dilansir oleh Direktorat Sekolah Dasar, berdasarkan hasil survei di Indonesia, menyatakan bahwa 73,9% penduduk memanfaatkan teknologi digital di mana hal tersebut setara dengan 202 juta orang dari total 270 juta penduduk Indonesia. Hal tersebut membuktikan bahwa penduduk Indonesia telah memanfaatkan teknologi yang berkembang.</p>
+
+        <p>Persebaran teknologi informasi yang semakin mudah juga tidak semuanya berisi hal positif, namun juga terdapat hal negatif, seperti penyebaran informasi tentang berita hoaks, radikalisme, penipuan, dan lain sebagainya. Sebagai pengguna teknologi tentu diperlukan berbagai cara untuk memahami dan menyaring informasi secara baik dan benar, salah satunya adalah dengan meningkatkan literasi digital.</p>
+
+        <p>Apakah kalian tahu literasi digital itu? Siapa yang mencetuskan istilah tersebut? Istilah literasi digital pertama kali dicetuskan oleh Paul Gilster, seorang pemerhati teknologi informasi asal Amerika Serikat. Paul kemudian menuliskan istilah tersebut ke dalam bukunya yang berjudul Digital Literacy pada tahun 1997. Dalam buku tersebut, Paul Gilster mendefinisikan literasi digital sebagai kemampuan untuk memahami dan menggunakan informasi dalam beragam bentuk dari berbagai sumber yang sangat luas dan diakses menggunakan perangkat komputer. Selain itu, UNESCO juga turut memperkuat istilah literasi digital. Menurut UNESCO, literasi digital berkaitan dengan kecakapan (life skill) karena tidak hanya melibatkan teknologi, melainkan meliputi kemampuan untuk belajar, berpikir kritis, kreatif, dan inovatif untuk menghasilkan kompetensi digital.</p>
+
+        <p>Secara umum, literasi digital adalah kemampuan seseorang untuk memahami dan menggunakan teknologi dan informasi yang dapat diakses melalui komputer, contohnya di internet, media digital, alat komunikasi, dan semacamnya. Dalam literasi digital, terdapat empat komponen penting yang menjadi pilar dasar dalam memanfaatkan teknologi informasi dan komunikasi dengan bijak. Empat pilar mendasar tersebut adalah etika digital, budaya digital, keterampilan digital, dan keamanan digital. Keempat pilar tersebut mempunyai fokusnya masing-masing sebagai berikut.</p>
+
+        <h3>A. Etika Digital</h3>
+        <p>Etika digital merupakan kemampuan seseorang dalam menyadari, menyesuaikan diri, dan menerapkan etika digital atau netiquette ketika berselancar di dunia digital sesuai dengan adat dan budaya yang berlaku. Misalnya, dengan tidak menyebarkan berita bohong atau hoaks yang dapat merugikan orang lain; tidak melakukan perundungan secara online di dunia maya dengan memberikan komentar, gambar, atau kode lainnya yang dapat menjatuhkan martabat atau harga diri seseorang.</p>
+
+        <h3>B. Budaya Digital</h3>
+        <p>Budaya digital merupakan suatu hasil dari kreasi dan karya-karya manusia yang berbasis pada teknologi internet. Umumnya, budaya digital tercermin melalui bagaimana cara manusia berinteraksi, berpikir, berperilaku, dan berkomunikasi di dunia digital. Salah satu contoh dari penerapan budaya digital, yaitu terkait aktivitas pemanfaatan media sosial hingga belanja online yang saat ini sangat digandrungi oleh masyarakat. Bahkan dengan hadirnya kemajuan teknologi tersebut, kebiasaan komunikasi secara surat-menyurat atau membeli sesuatu hal secara offline, lama-kelamaan mulai surut dan tidak diminati oleh masyarakat karena adanya kemudahan. Hal tersebutlah yang kemudian menjadi budaya digital.</p>
+
+        <h3>C. Keterampilan Digital</h3>
+        <p>Keterampilan digital berarti kemampuan dalam memanfaatkan informasi dengan menggunakan berbagai teknologi digital untuk melakukan evaluasi secara efektif. Keterampilan digital hampir sama sifatnya seperti budaya digital, karena terdapat salah satu keterampilan digital yang masuk ke dalam budaya digital, yaitu pemanfaatan media sosial dan platform belanja online.</p>
+
+        <p>Agar dapat menggunakan berbagai teknologi digital, diperlukan keterampilan digital yang harus dipelajari dan sering diasah. Sebab, perkembangan teknologi digital akan terus terjadi secara bertahap dan masyarakat perlu menyesuaikan diri dengan belajar serta mengasah keterampilan digital. Hal ini dilakukan agar masyarakat dapat mengikuti perkembangan zaman digital seperti sekarang ini, sehingga masyarakat juga tidak ketinggalan dengan hiruk pikuk perkembangan digital yang sedang berlangsung.</p>
+
+        <h3>D. Keamanan Digital</h3>
+        <p>Salah satu hal yang sangat penting dalam pemanfaatan teknologi digital adalah keamanan digital. Pada saat mengakses atau menggunakan teknologi, diperlukan keamanan untuk menjaga atau melindungi kerahasiaan privasi. Oleh karena itu, adanya user name dan password yang bersifat rahasia adalah sebagai upaya untuk menjaga keamanan dalam pemanfaatan teknologi digital. Demikian juga dengan kode OTP (One Time Password) yang membutuhkan verifikasi untuk mengaksesnya agar tidak disalahgunakan oleh orang-orang yang tidak bertanggung jawab dan dapat merugikan diri sendiri maupun orang lain.</p>
+
+        <p>Dengan menerapkan literasi digital, setiap individu akan mampu meningkatkan kemampuannya dalam membaca dan merangkai kalimat serta menulis informasi. Namun, literasi digital juga memiliki tantangan yang harus dihadapi, contohnya seperti penerimaan informasi yang terlalu banyak di saat yang bersamaan dapat menimbulkan berita hoaks. Adanya kemudahan penggunaan gadget inilah yang menimbulkan tantangan dalam literasi digital untuk segera diatasi, yaitu dengan cara memilah dan memahami informasi yang benar dan tepat. Selain itu, maraknya konten negatif juga menjadi tantangan dalam literasi digital, seperti pornografi, SARA, dan ujaran kebencian yang sudah sepatutnya dihindari. Cara untuk menghargai ilmu pengetahuan dan teknologi adalah dengan menggunakan teknologi, informasi, dan komunikasi dengan bijak.</p>
+
+        <p>Literasi digital dapat diterapkan di mana saja, seperti di lingkungan keluarga, sekolah, maupun masyarakat. Beberapa contoh penerapan literasi digital di antaranya yaitu pembelajaran dengan cara online melalui aplikasi ataupun web, mencari bahan pembelajaran dari sumber tepercaya di internet, menggunakan laptop atau komputer yang tersambung ke internet untuk mengerjakan tugas atau pekerjaan, menggunakan media sosial untuk sarana promosi dan menyebarkan informasi, mendengarkan musik dari layanan streaming resmi, mengirim tugas sekolah menggunakan e-mail, dan lainnya.</p>
+
+        <h2>2.2 Peralatan untuk Membuat Konten Digital</h2>
+        
+        <p>Konten digital adalah segala informasi yang dibuat, disimpan, dan didistribusikan dalam format digital. Konten digital dapat mencakup teks, gambar, audio, video, animasi, fitur interaktif, dan sebagainya. Jenis konten ini dapat digunakan untuk berbagai tujuan, seperti hiburan, pendidikan, komunikasi, pemasaran, dan e-commerce. Beberapa contoh konten digital, yaitu e-book, blog, artikel, podcast, musik, buku audio, video, film, acara TV, streaming langsung game, aplikasi, perangkat lunak, posting, komentar, pesan media sosial, situs web, dan iklan.</p>
+
+        <p>Untuk membuat konten yang dapat dilirik banyak orang, tentu diperlukan alat pembuat konten yang dapat bersaing agar mendapatkan perhatian setiap orang. Menemukan peralatan pembuat konten yang tepat dengan template bawaan atau fitur yang mudah digunakan adalah dua faktor penentu dalam hal membuat konten visual dan desain pemasaran yang unik. Dengan demikian, Anda dapat meningkatkan keunggulan kompetitif dibandingkan pesaing lainnya. Macam-macam aplikasi pembuat konten, di antaranya adalah Canva, Adobe Express, Jasper, Colorcinch, Flipsnack, Vectr, dan lainnya.</p>
+
+        <h3>A. Canva</h3>
+        <p>Canva adalah salah satu alat yang paling banyak digunakan untuk membuat konten digital di kalangan pemasar digital, pembuat konten, dan bloger. Canva menawarkan stok foto gratis yang menargetkan beragam industri. Cukup dengan mengetik istilah pencarian dan kisi-kisi gambar terkait, maka gambar segera muncul.</p>
+
+        <p>Sistemnya yang kuat memungkinkan untuk pembuatan semua jenis gambar. Pengguna yang menggunakan Canva dapat membuat gambar yang telah ditentukan dari ukuran standar. Selain itu, gambar dapat dibuat dengan gaya tayangan slide atau infografik. Canva juga menawarkan kemungkinan membuat gambar dalam ukuran yang sesuai dengan yang digunakan pada media sosial, seperti Twitter (X) dan Instagram.</p>
+
+        <h3>B. Adobe Express</h3>
+        <p>Adobe Express merupakan platform desain grafis yang memungkinkan pengguna digital untuk merancang postingan sosial, halaman web, dan video. Aplikasi ini dikembangkan oleh Adobe Systems dan memiliki kemiripan seperti Canva, baik dari segi tampilan maupun fitur-fiturnya. Salah satu fitur yang menjadi ciri khas dari Adobe Express adalah alat pembuat video yang dapat membantu mengubah gambar menjadi video yang memikat dalam beberapa klik.</p>
+
+        <p>Banyak pengguna memanfaatkan Adobe Express bersama Photoshop untuk membuat video di Instagram atau Facebook. Selain itu, Adobe Express menawarkan artikel lengkap untuk pengguna tingkat pemula setiap kali mengalami kesulitan.</p>
+
+        <h3>C. Jasper</h3>
+        <p>Jasper adalah perangkat lunak yang menggunakan AI sebagai alat copywriting terbaik yang memberikan salinan dengan konversi tinggi untuk situs web, e-mail, media sosial, dan iklan. Perangkat ini juga menyediakan sarana untuk merepresentasikan gambar dan memfasilitasi manipulasi data gambar, serta impor/ekspor data dalam berbagai format (misalnya, JPEG-2000 JP2, JPEG, PNM, BMP, Sun Rasterfile, dan PGX). Fungsi impor mendukung deteksi otomatis, yaitu penentuan otomatis format gambar, sehingga menghilangkan kebutuhan secara eksplisit dan mengidentifikasi format data masukan berkode.</p>
+
+        <p>Jasper dapat menulis berbagai jenis konten mulai dari deskripsi produk hingga cerita kreatif, garis besar postingan blog, hingga iklan Facebook. Perangkat lunak ini dapat memberikan ide untuk menjelajah secara kreatif. Ini dapat membantu memberikan ide posting blog topikal, merancang deskripsi produk, memperluas kalimat, menguraikan fitur produk, membantu dengan skrip video, beberapa dengan judul yang sempurna dan bahkan membantu Anda menanggapi ulasan.</p>
+
+        <p>Alat ini memiliki 50+ fitur penulisan dan dapat menulis salinan dalam 25 bahasa yang berbeda. Perangkat lunak Jasper terdiri atas perpustakaan dan beberapa program aplikasi. Kode ditulis dalam bahasa pemrograman C. Bahasa ini dipilih karena ketersediaan lingkungan pengembangan bahasa C untuk sebagian besar platform komputasi ketika Jasper pertama kali dikembangkan, sekitar tahun 1999.</p>
+
+        <p>Menghasilkan konten menggunakan Jasper sangatlah mudah, berikut ini langkah-langkah yang dapat dilakukan:</p>
+        <ol>
+          <li>Masuk atau daftar ke aplikasi Jasper.</li>
+          <li>Pilih Dasbor dari menu atas.</li>
+          <li>Pilih template dari jendela utama untuk mulai membuat konten.</li>
+          <li>Masukkan beberapa panduan di bagian kiri panel template.</li>
+          <li>Atur nada suara dan bahasa keluaran opsional.</li>
+          <li>Pilih tombol biru dan akan menghasilkan konten AI di bagian bawah halaman.</li>
+        </ol>
+
+        <p>Saat ini terdapat 39 tipe template yang tersedia yang mencakup banyak tipe konten umum. Di antaranya AIDA, PAS, intro blog, ide topik blog, cerita kreatif, penyempurnaan konten, deskripsi Google Ads, dan sebagainya.</p>
+
+        <h3>D. Colorcinch</h3>
+        <p>Colorcinch adalah platform untuk melakukan edit foto ataupun gambar secara online. Muncul dengan antarmuka intuitif yang sempurna untuk pemula dan non-desainer. Menawarkan opsi pengeditan dasar, seperti mengedit foto, memotong dan mengubah ukuran, menghapus latar belakang, menyesuaikan atau mengganti warna, dan menambahkan teks hanya dengan beberapa klik. Colorcinch dapat memadukan gambar, membuat kolase, menambahkan filter kreatif, dan mengubah foto menjadi karya seni yang dipersonalisasi.</p>
+
+        <h3>E. Flipsnack</h3>
+        <p>Flipsnack adalah pembuat flipbook interaktif yang serbaguna untuk memudahkan membuat materi promosi agar terlihat profesional, meskipun tanpa pengalaman desain sebelumnya. Flipsnack berguna dalam berbagai macam aplikasi, salah satu fiturnya yang paling populer adalah rangkaian alat bantu pemasaran kontennya yang canggih.</p>
+
+        <h3>F. Vectr</h3>
+        <p>Jika Anda ingin mendesain logo atau ikon untuk bisnis atau klien Anda, Vectr bisa menjadi alat yang Anda cari. Vectr adalah platform web dan desktop yang membantu pengguna dalam membuat desain di semua media sosial. Vectr memungkinkan penggunanya untuk menyimpan foto dalam format SVG (Scalable Vector Graphics), yang menunjukkan bahwa resolusi tidak akan berubah ketika memperbesar atau memperkecil desain, karena perangkat ini adalah alat pembuat SVG profesional, banyak pengguna juga menggunakannya saat membuat maket web.</p>
+
+        <h2>2.3 Hukum dan Perundangan Terkait Isu Digital</h2>
+
+        <p>Dinamika perkembangan dan kemajuan teknologi telah membuat perubahan yang nyata dalam berbagai sisi kehidupan manusia. Teknologi informasi, media elektronik, dan internet adalah kata kunci dalam kehidupan sehari-hari masyarakat global, termasuk masyarakat Indonesia. Khusus untuk penggunaan internet, tidak hanya digunakan sebagai media hiburan, internet juga digunakan untuk kegiatan lainnya seperti sekolah, bekerja, pelayanan kesehatan, dan bahkan berpolitik. Namun, seiring dengan perkembangan teknologi yang digunakan untuk mendapatkan informasi dan komunikasi sesuai dengan hak asasi masing-masing individu, perlu diimbangi pula dengan menjaga etika dalam komunikasi secara elektronik.</p>
+
+        <h3>A. Hak Asasi Digital</h3>
+        <p>Di era yang ditandai dengan kemajuan teknologi yang pesat dan berkembangnya ruang digital, hubungan antara hak asasi manusia dan dunia digital telah muncul sebagai konsekuensi yang kompleks dan kritis. Hal ini pula yang telah mengubah seseorang dalam berinteraksi, berkomunikasi, dan mengakses informasi hingga menimbulkan dampak positif maupun negatif bagi setiap orang. Ketika orang-orang terlibat dalam aktivitas online, seperti interaksi sosial hingga transaksi jual beli, menimbulkan pertanyaan tentang sejauh mana hak-hak tersebut dilindungi dan dihormati di dunia maya yang terus berkembang ini.</p>
+
+        <p>Hak asasi manusia juga dapat disebut sebagai hak asasi digital, di mana setiap orang dapat mengakses, menggunakan, membuat, dan menyebarluaskan media digital. Pengguna media digital memiliki hak bersuara, hak menikmati, dan hak menggunakan sebebas-bebasnya selama tidak melanggar aturan, karena terdapat banyak pengguna yang mengakses internet secara bersamaan.</p>
+
+        <p>Kebebasan berpendapat merupakan salah satu hak asasi yang dimiliki oleh setiap warga negara dan merupakan hak konstitusional yang dijamin oleh negara. Negara Indonesia sebagai negara hukum dan demokrasi berwenang mengatur dan melindungi pelaksanaan hak asasi manusia. Hal ini juga sesuai dengan yang tertuang pada Pasal 28F Undang-Undang Dasar Negara Tahun 1945, dinyatakan bahwa negara menjamin hak setiap orang untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, menyimpan, mengolah, dan menyampaikan informasi dengan menggunakan segala jenis saluran yang tersedia, kemudian dari pasal tersebut menjadi dasar pemberian hak asasi digital bagi setiap orang.</p>
+
+        <h3>B. Undang-Undang Informasi dan Transaksi Elektronik (UU ITE)</h3>
+        <p>Dalam aktivitas sehari-hari saat ini, sulit untuk dapat terlepas dari internet yang terhubung pada gadget yang dimiliki. Hampir semua aktivitas keseharian terhubung dengan internet, mulai dari yang sederhana seperti mengakses media sosial untuk berkenalan dengan orang-orang di seluruh dunia, hingga melakukan kegiatan pembelajaran secara online. Jejaring media sosial khususnya, telah banyak menjadi sumber utama terjadinya pelanggaran yang mengarah pada UU ITE.</p>
+
+        <h4>1. Latar Belakang Terciptanya UU ITE</h4>
+        <p>Undang-Undang Informasi dan Transaksi Elektronik (UU ITE) merupakan hasil kombinasi dari dua Rancangan Undang-Undang (RUU), yaitu (1) RUU Tindak Pidana Teknologi Informasi dari Universitas Padjadjaran atas arahan dari Departemen Komunikasi dan Informasi dengan bekerja sama dengan Institut Teknologi Bandung dan (2) RUU Informasi Elektronik dan Transaksi Elektronik dari Universitas Indonesia atas arahan dari Departemen Perindustrian dan Perdagangan. Selanjutnya, kedua RUU tersebut digabung dan disinkronisasi kembali oleh tim yang dipimpin oleh Prof. Ahmad M. Ramli, S.H. dan menjadi cyber law pertama di Indonesia yang disahkan melalui Undang-Undang Nomor 11 Tahun 2008 pada tanggal 21 April 2008.</p>
+
+        <p>Salah satu pertimbangan pembentukan UU ITE adalah maraknya pelanggaran-pelanggaran kesusilaan, penghinaan, pencemaran nama baik, perjudian, pemerasan dan/atau kekerasan di dalam media sosial yang memberikan kerugian pada pengguna yang lain sebagai korban, atau dampak yang akan timbul di masa depan. Berikut ini adalah beberapa pasal penting dalam UU ITE:</p>
+        <ul>
+          <li>Pasal 27 ayat (1) tentang Penyebaran Informasi dan/atau Dokumen Elektronik yang melanggar kesusilaan.</li>
+          <li>Pasal 27 ayat (3) tentang Penghinaan dan/atau pencemaran nama baik.</li>
+          <li>Pasal 27 ayat (4) tentang Pemerasan dan/atau pengancaman melalui media elektronik.</li>
+          <li>Pasal 28 ayat (1) tentang Penyebaran berita bohong dan menyesatkan.</li>
+          <li>Pasal 29 ayat (1) tentang Ancaman kekerasan atau menakut-nakuti yang ditujukan secara pribadi.</li>
+        </ul>
+
+        <h4>2. Manfaat UU ITE</h4>
+        <p>Beberapa manfaat dari adanya UU ITE di antaranya adalah sebagai berikut:</p>
+        <ul>
+          <li>Meningkatkan efektivitas dan efisiensi pelayanan publik.</li>
+          <li>Menjamin kepastian hukum untuk masyarakat yang melakukan transaksi elektronik.</li>
+          <li>Salah satu upaya mencegah adanya kejahatan yang dilakukan melalui internet.</li>
+          <li>Melindungi masyarakat dan pengguna internet lainnya dari berbagai tindak kejahatan online.</li>
+          <li>Mencerdaskan kehidupan bangsa sebagai bagian dari masyarakat informasi dunia.</li>
+          <li>Meng

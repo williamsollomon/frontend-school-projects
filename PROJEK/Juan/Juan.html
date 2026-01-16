@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIK BAB 2 Juan Sihotang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      background: url('https://cdna.artstation.com/p/assets/images/images/041/512/646/large/nikku-kun-denji-wallpaper.jpg?1631896783');
+      background-color: rgba(0, 0, 0, 0.378);
+      background-blend-mode: lighten;
+      font-family: 'Comic Sans MS', sans-serif;
+    }
+    .page {
+      width: 1200px;
+      margin: 40px auto;
+      background: #f5f5f5;
+      border: 12px solid #000;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+    }
+
+    .header {
+      font-family: 'Wahupop';
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-around;
+      gap: 8px;
+      padding: 8px;
+      border-bottom: 6px solid #000;
+    }
+    .box {
+      background: #e0e0e0;
+      color: #000;
+      border: 3px solid #000;
+      width: 300px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .box a{
+      text-decoration: none;
+      color: inherit;
+      font-size: 15px;
+    }
+
+    .box:hover{
+      background:#000;
+      color: #e0e0e0;
+      transform: scale(1.05)
+    }
+
+    .main {
+      height: 800px;
+      padding: 20px;
+      position: relative;
+      overflow-y: scroll;
+    }
+    
+    .label {
+      font-family: 'Wahupop';
+      background: #000;
+      color: #fff;
+      display: inline-block;
+      padding: 6px 12px;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 128px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .subtitle {
+      font-family: 'Wahupop';
+      margin-top: 10px;
+      letter-spacing: -1px;
+      font-size: 32px;
+    }
+
+    .reze {
+      margin-top: 30px;
+      width: 100%;
+      height: 500px;
+      border: 4px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .materi {
+      margin-top: 30px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .materi h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-left: 6px solid #000;
+      padding-left: 15px;
+    }
+
+    .materi h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .materi h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .materi h5 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .materi p {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .materi ul, .materi ol {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .materi li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+
+    .side {
+      position: relative;
+      border-left: 6px solid #000;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .side-box {
+      border: 4px solid #000;
+      background: #fafafa;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .handwritten {
+      font-family: 'Wahupop', cursive;
+      font-size: 18px;
+    }
+
+    .footer {
+      grid-column: 1 / -1;
+      border-top: 6px solid #000;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .panel {
+      height: 120px;
+      border: 3px solid #000;
+      background: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .panel img{
+      max-height: 116px;
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+
+    .floating-panels {
+      position: absolute; 
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .panel-float {
+      position: absolute;
+      pointer-events: auto;
+      width: 90px;
+      height: 60px;
+      background: #f2f2f2;
+      border: 3px solid #000;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+      
+    }
+    .panel-float:hover {
+      opacity: 1;
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    .panel-float p{
+      margin-top: 5px;
+      margin-left: 5px;
+      font-family:'Wahupop';
+      letter-spacing: 2px;
+      font-size: 16px;
+    }
+
+</style>
+</head>
+<body>
+
+  <div class="floating-panels" id="floatingPanels">
+    <div class="panel-float" style="top:10%;left:5%;"><p style="text-align:center; line-height: 45px;">レゼ</p></div>
+    <div class="panel-float" style="top:30%;left:80%;"><p>ありがとう…</p></div>
+    <div class="panel-float" style="top:75%;left:70%;"><p>君に会えてよかった</p></div>
+    <div class="panel-float" style="top:20%;left:45%;"><img src="https://i.redd.it/4x89h2it9s0f1.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+  </div>
+
+  
+  <div class="page">
+    <div class="header">
+      <div class="box"><a href="#2.1">Perkembangan</a></div>
+      <div class="box"><a href="#2.2">Peralatan</a></div>
+      <div class="box"><a href="#2.3">Hukum</a></div>
+      <div class="box"><a>Pemanfaatan</a></div>
+      <div class="box"><a>Pengelolaan</a></div>
+      <div class="box"><a>Perbankan</a></div>
+
+      
+    </div>
+
+    <div class="main">
+      <div class="label">juan justin wubert sihotang</div>
+      <div class="title">BAB 2</div>
+      <div class="subtitle">Literasi Digital</div>
+
+        <div class="materi" id="2.1">
+        <h2>2.1 Perkembangan Literasi Digital</h2>
+        
+        <p>Saat ini perkembangan teknologi semakin pesat, hal tersebut telah memberikan banyak kemajuan dan kemudahan bagi kehidupan manusia. Segala kegiatan dapat secara mudah dilakukan hanya dengan memanfaatkan komputer dan internet. Melalui hal tersebut, segala jenis informasi juga dapat tersebar luas secara mudah. Dilansir oleh Direktorat Sekolah Dasar, berdasarkan hasil survei di Indonesia, menyatakan bahwa 73,9% penduduk memanfaatkan teknologi digital di mana hal tersebut setara dengan 202 juta orang dari total 270 juta penduduk Indonesia. Hal tersebut membuktikan bahwa penduduk Indonesia telah memanfaatkan teknologi yang berkembang.</p>
+
+        <p>Persebaran teknologi informasi yang semakin mudah juga tidak semuanya berisi hal positif, namun juga terdapat hal negatif, seperti penyebaran informasi tentang berita hoaks, radikalisme, penipuan, dan lain sebagainya. Sebagai pengguna teknologi tentu diperlukan berbagai cara untuk memahami dan menyaring informasi secara baik dan benar, salah satunya adalah dengan meningkatkan literasi digital.</p>
+
+        <p>Apakah kalian tahu literasi digital itu? Siapa yang mencetuskan istilah tersebut? Istilah literasi digital pertama kali dicetuskan oleh Paul Gilster, seorang pemerhati teknologi informasi asal Amerika Serikat. Paul kemudian menuliskan istilah tersebut ke dalam bukunya yang berjudul Digital Literacy pada tahun 1997. Dalam buku tersebut, Paul Gilster mendefinisikan literasi digital sebagai kemampuan untuk memahami dan menggunakan informasi dalam beragam bentuk dari berbagai sumber yang sangat luas dan diakses menggunakan perangkat komputer. Selain itu, UNESCO juga turut memperkuat istilah literasi digital. Menurut UNESCO, literasi digital berkaitan dengan kecakapan (life skill) karena tidak hanya melibatkan teknologi, melainkan meliputi kemampuan untuk belajar, berpikir kritis, kreatif, dan inovatif untuk menghasilkan kompetensi digital.</p>
+
+        <p>Secara umum, literasi digital adalah kemampuan seseorang untuk memahami dan menggunakan teknologi dan informasi yang dapat diakses melalui komputer, contohnya di internet, media digital, alat komunikasi, dan semacamnya. Dalam literasi digital, terdapat empat komponen penting yang menjadi pilar dasar dalam memanfaatkan teknologi informasi dan komunikasi dengan bijak. Empat pilar mendasar tersebut adalah etika digital, budaya digital, keterampilan digital, dan keamanan digital. Keempat pilar tersebut mempunyai fokusnya masing-masing sebagai berikut.</p>
+
+        <h3>A. Etika Digital</h3>
+        <p>Etika digital merupakan kemampuan seseorang dalam menyadari, menyesuaikan diri, dan menerapkan etika digital atau netiquette ketika berselancar di dunia digital sesuai dengan adat dan budaya yang berlaku. Misalnya, dengan tidak menyebarkan berita bohong atau hoaks yang dapat merugikan orang lain; tidak melakukan perundungan secara online di dunia maya dengan memberikan komentar, gambar, atau kode lainnya yang dapat menjatuhkan martabat atau harga diri seseorang.</p>
+
+        <h3>B. Budaya Digital</h3>
+        <p>Budaya digital merupakan suatu hasil dari kreasi dan karya-karya manusia yang berbasis pada teknologi internet. Umumnya, budaya digital tercermin melalui bagaimana cara manusia berinteraksi, berpikir, berperilaku, dan berkomunikasi di dunia digital. Salah satu contoh dari penerapan budaya digital, yaitu terkait aktivitas pemanfaatan media sosial hingga belanja online yang saat ini sangat digandrungi oleh masyarakat. Bahkan dengan hadirnya kemajuan teknologi tersebut, kebiasaan komunikasi secara surat-menyurat atau membeli sesuatu hal secara offline, lama-kelamaan mulai surut dan tidak diminati oleh masyarakat karena adanya kemudahan. Hal tersebutlah yang kemudian menjadi budaya digital.</p>
+
+        <h3>C. Keterampilan Digital</h3>
+        <p>Keterampilan digital berarti kemampuan dalam memanfaatkan informasi dengan menggunakan berbagai teknologi digital untuk melakukan evaluasi secara efektif. Keterampilan digital hampir sama sifatnya seperti budaya digital, karena terdapat salah satu keterampilan digital yang masuk ke dalam budaya digital, yaitu pemanfaatan media sosial dan platform belanja online.</p>
+
+        <p>Agar dapat menggunakan berbagai teknologi digital, diperlukan keterampilan digital yang harus dipelajari dan sering diasah. Sebab, perkembangan teknologi digital akan terus terjadi secara bertahap dan masyarakat perlu menyesuaikan diri dengan belajar serta mengasah keterampilan digital. Hal ini dilakukan agar masyarakat dapat mengikuti perkembangan zaman digital seperti sekarang ini, sehingga masyarakat juga tidak ketinggalan dengan hiruk pikuk perkembangan digital yang sedang berlangsung.</p>
+
+        <h3>D. Keamanan Digital</h3>
+        <p>Salah satu hal yang sangat penting dalam pemanfaatan teknologi digital adalah keamanan digital. Pada saat mengakses atau menggunakan teknologi, diperlukan keamanan untuk menjaga atau melindungi kerahasiaan privasi. Oleh karena itu, adanya user name dan password yang bersifat rahasia adalah sebagai upaya untuk menjaga keamanan dalam pemanfaatan teknologi digital. Demikian juga dengan kode OTP (One Time Password) yang membutuhkan verifikasi untuk mengaksesnya agar tidak disalahgunakan oleh orang-orang yang tidak bertanggung jawab dan dapat merugikan diri sendiri maupun orang lain.</p>
+
+        <p>Dengan menerapkan literasi digital, setiap individu akan mampu meningkatkan kemampuannya dalam membaca dan merangkai kalimat serta menulis informasi. Namun, literasi digital juga memiliki tantangan yang harus dihadapi, contohnya seperti penerimaan informasi yang terlalu banyak di saat yang bersamaan dapat menimbulkan berita hoaks. Adanya kemudahan penggunaan gadget inilah yang menimbulkan tantangan dalam literasi digital untuk segera diatasi, yaitu dengan cara memilah dan memahami informasi yang benar dan tepat. Selain itu, maraknya konten negatif juga menjadi tantangan dalam literasi digital, seperti pornografi, SARA, dan ujaran kebencian yang sudah sepatutnya dihindari. Cara untuk menghargai ilmu pengetahuan dan teknologi adalah dengan menggunakan teknologi, informasi, dan komunikasi dengan bijak.</p>
+
+        <p>Literasi digital dapat diterapkan di mana saja, seperti di lingkungan keluarga, sekolah, maupun masyarakat. Beberapa contoh penerapan literasi digital di antaranya yaitu pembelajaran dengan cara online melalui aplikasi ataupun web, mencari bahan pembelajaran dari sumber tepercaya di internet, menggunakan laptop atau komputer yang tersambung ke internet untuk mengerjakan tugas atau pekerjaan, menggunakan media sosial untuk sarana promosi dan menyebarkan informasi, mendengarkan musik dari layanan streaming resmi, mengirim tugas sekolah menggunakan e-mail, dan lainnya.</p>
+
+        <h2 id="2.2">2.2 Peralatan untuk Membuat Konten Digital</h2>
+        
+        <p>Konten digital adalah segala informasi yang dibuat, disimpan, dan didistribusikan dalam format digital. Konten digital dapat mencakup teks, gambar, audio, video, animasi, fitur interaktif, dan sebagainya. Jenis konten ini dapat digunakan untuk berbagai tujuan, seperti hiburan, pendidikan, komunikasi, pemasaran, dan e-commerce. Beberapa contoh konten digital, yaitu e-book, blog, artikel, podcast, musik, buku audio, video, film, acara TV, streaming langsung game, aplikasi, perangkat lunak, posting, komentar, pesan media sosial, situs web, dan iklan.</p>
+
+        <p>Untuk membuat konten yang dapat dilirik banyak orang, tentu diperlukan alat pembuat konten yang dapat bersaing agar mendapatkan perhatian setiap orang. Menemukan peralatan pembuat konten yang tepat dengan template bawaan atau fitur yang mudah digunakan adalah dua faktor penentu dalam hal membuat konten visual dan desain pemasaran yang unik. Dengan demikian, Anda dapat meningkatkan keunggulan kompetitif dibandingkan pesaing lainnya. Macam-macam aplikasi pembuat konten, di antaranya adalah Canva, Adobe Express, Jasper, Colorcinch, Flipsnack, Vectr, dan lainnya.</p>
+
+        <h3>A. Canva</h3>
+        <p>Canva adalah salah satu alat yang paling banyak digunakan untuk membuat konten digital di kalangan pemasar digital, pembuat konten, dan bloger. Canva menawarkan stok foto gratis yang menargetkan beragam industri. Cukup dengan mengetik istilah pencarian dan kisi-kisi gambar terkait, maka gambar segera muncul.</p>
+
+        <p>Sistemnya yang kuat memungkinkan untuk pembuatan semua jenis gambar. Pengguna yang menggunakan Canva dapat membuat gambar yang telah ditentukan dari ukuran standar. Selain itu, gambar dapat dibuat dengan gaya tayangan slide atau infografik. Canva juga menawarkan kemungkinan membuat gambar dalam ukuran yang sesuai dengan yang digunakan pada media sosial, seperti Twitter (X) dan Instagram.</p>
+
+        <h3>B. Adobe Express</h3>
+        <p>Adobe Express merupakan platform desain grafis yang memungkinkan pengguna digital untuk merancang postingan sosial, halaman web, dan video. Aplikasi ini dikembangkan oleh Adobe Systems dan memiliki kemiripan seperti Canva, baik dari segi tampilan maupun fitur-fiturnya. Salah satu fitur yang menjadi ciri khas dari Adobe Express adalah alat pembuat video yang dapat membantu mengubah gambar menjadi video yang memikat dalam beberapa klik.</p>
+
+        <p>Banyak pengguna memanfaatkan Adobe Express bersama Photoshop untuk membuat video di Instagram atau Facebook. Selain itu, Adobe Express menawarkan artikel lengkap untuk pengguna tingkat pemula setiap kali mengalami kesulitan.</p>
+
+        <h3>C. Jasper</h3>
+        <p>Jasper adalah perangkat lunak yang menggunakan AI sebagai alat copywriting terbaik yang memberikan salinan dengan konversi tinggi untuk situs web, e-mail, media sosial, dan iklan. Perangkat ini juga menyediakan sarana untuk merepresentasikan gambar dan memfasilitasi manipulasi data gambar, serta impor/ekspor data dalam berbagai format (misalnya, JPEG-2000 JP2, JPEG, PNM, BMP, Sun Rasterfile, dan PGX). Fungsi impor mendukung deteksi otomatis, yaitu penentuan otomatis format gambar, sehingga menghilangkan kebutuhan secara eksplisit dan mengidentifikasi format data masukan berkode.</p>
+
+        <p>Jasper dapat menulis berbagai jenis konten mulai dari deskripsi produk hingga cerita kreatif, garis besar postingan blog, hingga iklan Facebook. Perangkat lunak ini dapat memberikan ide untuk menjelajah secara kreatif. Ini dapat membantu memberikan ide posting blog topikal, merancang deskripsi produk, memperluas kalimat, menguraikan fitur produk, membantu dengan skrip video, beberapa dengan judul yang sempurna dan bahkan membantu Anda menanggapi ulasan.</p>
+
+        <p>Alat ini memiliki 50+ fitur penulisan dan dapat menulis salinan dalam 25 bahasa yang berbeda. Perangkat lunak Jasper terdiri atas perpustakaan dan beberapa program aplikasi. Kode ditulis dalam bahasa pemrograman C. Bahasa ini dipilih karena ketersediaan lingkungan pengembangan bahasa C untuk sebagian besar platform komputasi ketika Jasper pertama kali dikembangkan, sekitar tahun 1999.</p>
+
+        <p>Menghasilkan konten menggunakan Jasper sangatlah mudah, berikut ini langkah-langkah yang dapat dilakukan:</p>
+        <ol>
+          <li>Masuk atau daftar ke aplikasi Jasper.</li>
+          <li>Pilih Dasbor dari menu atas.</li>
+          <li>Pilih template dari jendela utama untuk mulai membuat konten.</li>
+          <li>Masukkan beberapa panduan di bagian kiri panel template.</li>
+          <li>Atur nada suara dan bahasa keluaran opsional.</li>
+          <li>Pilih tombol biru dan akan menghasilkan konten AI di bagian bawah halaman.</li>
+        </ol>
+
+        <p>Saat ini terdapat 39 tipe template yang tersedia yang mencakup banyak tipe konten umum. Di antaranya AIDA, PAS, intro blog, ide topik blog, cerita kreatif, penyempurnaan konten, deskripsi Google Ads, dan sebagainya.</p>
+
+        <h3>D. Colorcinch</h3>
+        <p>Colorcinch adalah platform untuk melakukan edit foto ataupun gambar secara online. Muncul dengan antarmuka intuitif yang sempurna untuk pemula dan non-desainer. Menawarkan opsi pengeditan dasar, seperti mengedit foto, memotong dan mengubah ukuran, menghapus latar belakang, menyesuaikan atau mengganti warna, dan menambahkan teks hanya dengan beberapa klik. Colorcinch dapat memadukan gambar, membuat kolase, menambahkan filter kreatif, dan mengubah foto menjadi karya seni yang dipersonalisasi.</p>
+
+        <h3>E. Flipsnack</h3>
+        <p>Flipsnack adalah pembuat flipbook interaktif yang serbaguna untuk memudahkan membuat materi promosi agar terlihat profesional, meskipun tanpa pengalaman desain sebelumnya. Flipsnack berguna dalam berbagai macam aplikasi, salah satu fiturnya yang paling populer adalah rangkaian alat bantu pemasaran kontennya yang canggih.</p>
+
+        <h3>F. Vectr</h3>
+        <p>Jika Anda ingin mendesain logo atau ikon untuk bisnis atau klien Anda, Vectr bisa menjadi alat yang Anda cari. Vectr adalah platform web dan desktop yang membantu pengguna dalam membuat desain di semua media sosial. Vectr memungkinkan penggunanya untuk menyimpan foto dalam format SVG (Scalable Vector Graphics), yang menunjukkan bahwa resolusi tidak akan berubah ketika memperbesar atau memperkecil desain, karena perangkat ini adalah alat pembuat SVG profesional, banyak pengguna juga menggunakannya saat membuat maket web.</p>
+
+        <h2 id="2.3">2.3 Hukum dan Perundangan Terkait Isu Digital</h2>
+
+        <p>Dinamika perkembangan dan kemajuan teknologi telah membuat perubahan yang nyata dalam berbagai sisi kehidupan manusia. Teknologi informasi, media elektronik, dan internet adalah kata kunci dalam kehidupan sehari-hari masyarakat global, termasuk masyarakat Indonesia. Khusus untuk penggunaan internet, tidak hanya digunakan sebagai media hiburan, internet juga digunakan untuk kegiatan lainnya seperti sekolah, bekerja, pelayanan kesehatan, dan bahkan berpolitik. Namun, seiring dengan perkembangan teknologi yang digunakan untuk mendapatkan informasi dan komunikasi sesuai dengan hak asasi masing-masing individu, perlu diimbangi pula dengan menjaga etika dalam komunikasi secara elektronik.</p>
+
+        <h3>A. Hak Asasi Digital</h3>
+        <p>Di era yang ditandai dengan kemajuan teknologi yang pesat dan berkembangnya ruang digital, hubungan antara hak asasi manusia dan dunia digital telah muncul sebagai konsekuensi yang kompleks dan kritis. Hal ini pula yang telah mengubah seseorang dalam berinteraksi, berkomunikasi, dan mengakses informasi hingga menimbulkan dampak positif maupun negatif bagi setiap orang. Ketika orang-orang terlibat dalam aktivitas online, seperti interaksi sosial hingga transaksi jual beli, menimbulkan pertanyaan tentang sejauh mana hak-hak tersebut dilindungi dan dihormati di dunia maya yang terus berkembang ini.</p>
+
+        <p>Hak asasi manusia juga dapat disebut sebagai hak asasi digital, di mana setiap orang dapat mengakses, menggunakan, membuat, dan menyebarluaskan media digital. Pengguna media digital memiliki hak bersuara, hak menikmati, dan hak menggunakan sebebas-bebasnya selama tidak melanggar aturan, karena terdapat banyak pengguna yang mengakses internet secara bersamaan.</p>
+
+        <p>Kebebasan berpendapat merupakan salah satu hak asasi yang dimiliki oleh setiap warga negara dan merupakan hak konstitusional yang dijamin oleh negara. Negara Indonesia sebagai negara hukum dan demokrasi berwenang mengatur dan melindungi pelaksanaan hak asasi manusia. Hal ini juga sesuai dengan yang tertuang pada Pasal 28F Undang-Undang Dasar Negara Tahun 1945, dinyatakan bahwa negara menjamin hak setiap orang untuk berkomunikasi dan memperoleh informasi untuk mengembangkan pribadi dan lingkungan sosialnya, serta berhak untuk mencari, memperoleh, memiliki, menyimpan, mengolah, dan menyampaikan informasi dengan menggunakan segala jenis saluran yang tersedia, kemudian dari pasal tersebut menjadi dasar pemberian hak asasi digital bagi setiap orang.</p>
+
+        <h3>B. Undang-Undang Informasi dan Transaksi Elektronik (UU ITE)</h3>
+        <p>Dalam aktivitas sehari-hari saat ini, sulit untuk dapat terlepas dari internet yang terhubung pada gadget yang dimiliki. Hampir semua aktivitas keseharian terhubung dengan internet, mulai dari yang sederhana seperti mengakses media sosial untuk berkenalan dengan orang-orang di seluruh dunia, hingga melakukan kegiatan pembelajaran secara online. Jejaring media sosial khususnya, telah banyak menjadi sumber utama terjadinya pelanggaran yang mengarah pada UU ITE.</p>
+
+        <h4>1. Latar Belakang Terciptanya UU ITE</h4>
+        <p>Undang-Undang Informasi dan Transaksi Elektronik (UU ITE) merupakan hasil kombinasi dari dua Rancangan Undang-Undang (RUU), yaitu (1) RUU Tindak Pidana Teknologi Informasi dari Universitas Padjadjaran atas arahan dari Departemen Komunikasi dan Informasi dengan bekerja sama dengan Institut Teknologi Bandung dan (2) RUU Informasi Elektronik dan Transaksi Elektronik dari Universitas Indonesia atas arahan dari Departemen Perindustrian dan Perdagangan. Selanjutnya, kedua RUU tersebut digabung dan disinkronisasi kembali oleh tim yang dipimpin oleh Prof. Ahmad M. Ramli, S.H. dan menjadi cyber law pertama di Indonesia yang disahkan melalui Undang-Undang Nomor 11 Tahun 2008 pada tanggal 21 April 2008.</p>
+
+        <p>Salah satu pertimbangan pembentukan UU ITE adalah maraknya pelanggaran-pelanggaran kesusilaan, penghinaan, pencemaran nama baik, perjudian, pemerasan dan/atau kekerasan di dalam media sosial yang memberikan kerugian pada pengguna yang lain sebagai korban, atau dampak yang akan timbul di masa depan. Berikut ini adalah beberapa pasal penting dalam UU ITE:</p>
+        <ul>
+          <li>Pasal 27 ayat (1) tentang Penyebaran Informasi dan/atau Dokumen Elektronik yang melanggar kesusilaan.</li>
+          <li>Pasal 27 ayat (3) tentang Penghinaan dan/atau pencemaran nama baik.</li>
+          <li>Pasal 28 ayat (2) tentang Ujaran kebencian yang berkaitan dengan SARA. </li>
+          <li>Pasal 29 ayat (1) tentang Ancaman kekerasan atau menakut-nakuti yang ditujukan secara pribadi.</li>
+          <li>Pasal 36 tentang Kerugian</li>
+          <li>Pasal 40 ayat 2 (a) tentang Muatan yang dilarang. </li>
+          <li>Pasal 40 ayat 2 (b) tentang Pemutusan akses. </li>
+          <li>Pasal 45 ayat (3) tentang Ancaman penjara tindakan defamasi. </li>
+        </ul>
+
+        <h4>2. Manfaat UU ITE</h4>
+        <p>Beberapa manfaat dari adanya UU ITE di antaranya adalah sebagai berikut:</p>
+        <ul>
+          <li>Meningkatkan efektivitas dan efisiensi pelayanan publik.</li>
+          <li>Menjamin kepastian hukum untuk masyarakat yang melakukan transaksi elektronik.</li>
+          <li>Salah satu upaya mencegah adanya kejahatan yang dilakukan melalui internet.</li>
+          <li>Melindungi masyarakat dan pengguna internet lainnya dari berbagai tindak kejahatan online.</li>
+          <li>Mencerdaskan kehidupan bangsa sebagai bagian dari masyarakat informasi dunia.</li>
+          <li>Mengembangkan perdagangan dan perekonomian nasional dalam rangka meningkatkan kesejahteraan masyarakat.</li>
+          <li>Memberikan rasa aman, keadilan, dan kepastian hukum bagi pengguna dan penyelenggara teknologi informasi.</li>
+        </ul>
+
+        <h4>3. Perbuatan yang Dilarang dalam UU ITE</h4>
+        <p>Undang-Undang Informasi dan Transaksi Elektronik (UU ITE) dibuat untuk mengatur kegiatan yang berkaitan dengan penggunaan internet, komputer, dan perangkat elektronik lainnya. Berikut ini beberapa contoh perbuatan yang dilarang oleh UU ITE:</p>
+
+        <h5>a. Menyebarkan Video Asusila</h5>
+        <p>Setiap orang yang melanggar kesusilaan sebagaimana dimaksud dalam Pasal 27 ayat (1) dipidana dengan pidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp1.000.000.000,00 (satu miliar rupiah).</p>
+
+        <h5>b. Perjudian Online</h5>
+        <p>Pasal 27 ayat (2) UU ITE memuat larangan perbuatan yang bermuatan perjudian. Hukuman untuk setiap orang yang melanggar adalah pidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp1.000.000.000,00 (satu miliar rupiah).</p>
+
+        <h5>c. Pencemaran Nama Baik</h5>
+        <p>Pelaku yang terjerat pasal ini dapat dipidana penjara paling lama 4 tahun dan/atau denda paling banyak Rp750.000.000,00 (tujuh ratus lima puluh juta rupiah).</p>
+
+        <h5>d. Pemerasan dan Pengancaman</h5>
+        <p>Hukumannya adalah pidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp1.000.000.000,00 (satu miliar rupiah).</p>
+
+        <h5>e. Berita Bohong</h5>
+        <p>Bagi para pelaku penyebar berita bohong dapat dipidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp1.000.000.000,00 (satu miliar rupiah).</p>
+
+        <h5>f. Ujaran Kebencian</h5>
+        <p>Hukuman pelaku ujaran kebencian adalah pidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp1.000.000.000,00 (satu miliar rupiah).</p>
+
+        <h5>g. Teror Online</h5>
+        <p>Hukuman bagi pelaku teror online adalah pidana penjara paling lama 4 tahun dan/atau denda paling banyak Rp750.000.000,00 (tujuh ratus lima puluh juta rupiah).</p>
+
+        <h4>4. Dampak Negatif Adanya UU ITE</h4>
+        <p>Beberapa dampak negatif dari adanya UU ITE ini di antaranya adalah sebagai berikut:</p>
+        <ul>
+          <li>Membatasi kebebasan berpendapat, terutama dalam beropini dan memberikan kritik.</li>
+          <li>Menimbulkan kesewenang-wenangan para penegak hukum dalam menentukan orang yang tersandung UU ITE.</li>
+          <li>Menjadi instrumen sebagian kelompok dalam rangka balas dendam.</li>
+          <li>Kurang menjamin kepastian hukum karena putusan menjadi beragam bahkan bertolak belakang.</li>
+          <li>Memicu keresahan dan perselisihan masyarakat.</li>
+          <li>Tidak efektif karena beberapa pasal merupakan duplikasi aturan KUHP.</li>
+        </ul>
+
+        <h3>C. Permasalahan Hukum dalam Dunia Digital</h3>
+        <p>Perkembangan teknologi yang sangat pesat memberikan kemudahan bagi masyarakat untuk melakukan aktivitas di ranah digital. Namun kemajuan teknologi juga memberikan dampak negatif seperti beberapa tindakan kejahatan di dunia maya.</p>
+
+        <p>Kasus yang banyak terjadi pada dunia maya, yaitu kasus penipuan melalui e-mail ataupun SMS, di mana para pelaku berpura-pura menjadi saudara/kerabat dekat korban dengan modus terkena musibah ataupun kecelakaan. Hal ini sangat sering terjadi di Indonesia, sayangnya para pelaku jarang bisa ditangkap.</p>
+
+        <p>Dibutuhkan peran penting dari kedua belah pihak, baik dari pemerintah maupun masyarakat. Kesadaran masyarakat untuk menjaga keamanan data ketika berselancar di internet juga sangat penting, seperti menghindari mengunjungi situs ilegal dan selalu waspada ketika mendapatkan informasi dari orang yang tidak dikenal.</p>
+
+        <h2 id="2.4">2.4 Pemanfaatan Teknologi Digital</h2>
+
+        <p>Teknologi digital merupakan teknologi yang pengoperasionalannya tidak lagi banyak membutuhkan tenaga manusia dan lebih cenderung memanfaatkan sistem komputerisasi secara otomatis. Teknologi digital menggunakan sistem bit dan byte yang ditujukan untuk menyimpan data dan memproses data.</p>
+
+        <h3>A. Menggunakan YouTube</h3>
+        <p>YouTube merupakan salah satu layanan dari Google yang memberikan fasilitas bagi penggunanya untuk menonton, menyukai, berbagi, berkomentar, mengunggah video, serta dapat diakses oleh pengguna lain dari seluruh dunia secara gratis.</p>
+
+        <h4>1. Membuat Channel YouTube dari Komputer</h4>
+        <p>Berikut ini langkah-langkah untuk membuat channel YouTube:</p>
+        <ol>
+          <li>Buka situs https://www.youtube.com/ di browser Anda.</li>
+          <li>Klik Sign in dan masuk dengan akun Google Anda.</li>
+          <li>Klik Akun pada pojok kanan atas.</li>
+          <li>Pilih opsi Buat Channel atau Create Channel.</li>
+          <li>Masukkan nama channel yang akan dibuat.</li>
+          <li>Channel YouTube sudah berhasil dibuat.</li>
+        </ol>
+
+        <h4>2. Mengunggah Video Melalui YouTube</h4>
+        <p>Berikut ini langkah-langkah mengunggah video ke YouTube:</p>
+        <ol>
+          <li>Klik ikon Upload Video di bagian atas halaman.</li>
+          <li>Pilih video yang ingin diunggah dari komputer.</li>
+          <li>Edit informasi dasar dan setelan lanjutan untuk video.</li>
+          <li>Buat judul dengan panjang hingga 100 karakter.</li>
+          <li>Klik Publikasikan untuk menyelesaikan proses upload.</li>
+        </ol>
+
+        <h3>B. Menggunakan Google Drive</h3>
+
+        <h4>1. Pengertian Google Drive</h4>
+        <p>Google Drive merupakan salah satu layanan penyimpanan berbasis cloud yang memungkinkan pengguna menyimpan dan mengakses file secara online. Google Drive dilengkapi dengan serangkaian perangkat seperti Google Docs, Spreadsheet, dan Slide.</p>
+
+        <h4>2. Mengunggah Berkas Melalui Situs Desktop</h4>
+        <ol>
+          <li>Klik New di pojok kiri atas halaman.</li>
+          <li>Klik File upload.</li>
+          <li>Pilih berkas yang akan diunggah.</li>
+          <li>Klik Open.</li>
+          <li>Tunggu hingga berkas selesai diunggah.</li>
+        </ol>
+
+        <h3>C. Menggunakan Media Sosial</h3>
+
+        <h4>1. Jenis-Jenis Media Sosial</h4>
+        <ul>
+          <li><strong>Jejaring Sosial:</strong> WhatsApp, Facebook, Twitter, Instagram</li>
+          <li><strong>Social Blogging Networks:</strong> WordPress, Blogger, Tumblr</li>
+          <li><strong>Blog Mikro:</strong> Twitter (X)</li>
+          <li><strong>Media Sharing Network:</strong> Instagram, TikTok, YouTube</li>
+          <li><strong>Forum Diskusi:</strong> Reddit, Quora, Kaskus</li>
+          <li><strong>Social Audio Networks:</strong> Clubhouse, Discord</li>
+        </ul>
+
+        <h4>2. Pemanfaatan Media Sosial</h4>
+        <ul>
+          <li>Media Sosial untuk Bersosialisasi</li>
+          <li>Memperluas Lingkaran Pertemanan</li>
+          <li>Media Sosial sebagai Penunjang Bisnis</li>
+          <li>Memperoleh Ilmu Baru</li>
+          <li>Sebagai Sarana Dokumentasi dan Administrasi</li>
+          <li>Sarana Hiburan</li>
+        </ul>
+
+        <h2 id="2.5">2.5 Pengelolaan Kata Sandi</h2>
+
+        <h3>A. Perlindungan Data Pribadi di Era Digital</h3>
+
+        <h4>1. Ancaman Keamanan Data Pribadi</h4>
+        <p>Berikut beberapa contoh kejahatan dunia maya:</p>
+        
+        <h5>a. Penipuan Phishing</h5>
+        <p>Phishing merupakan upaya untuk mencuri informasi dan data diri melalui tautan situs web palsu yang dibuat semirip mungkin dengan situs web aslinya.</p>
+
+        <h5>b. Hacking atau Peretasan</h5>
+        <p>Hacking adalah tindakan untuk mengakses sistem atau jaringan komputer tanpa izin dengan tujuan memodifikasi atau mengambil data.</p>
+
+        <h5>c. Spoofing</h5>
+        <p>Spoofing adalah salah satu jenis penipuan online yang pelakunya menyamar sebagai pihak tertentu untuk mencuri data-data pribadi.</p>
+
+        <h4>2. Cara Melindungi Data Pribadi</h4>
+        <ul>
+          <li>Rutin mengganti kata sandi atau password</li>
+          <li>Tidak mengunggah data pribadi sembarangan</li>
+          <li>Mengaktifkan Two-Factor Authentication</li>
+          <li>Menggunakan Incognito Mode</li>
+          <li>Hindari membuka sembarang tautan</li>
+          <li>Bertransaksi di platform tepercaya</li>
+        </ul>
+
+        <h3>B. Menerapkan Autentikasi Dua Langkah</h3>
+        <p>Autentikasi Dua Langkah (Two-Factor Authentication, 2FA) merupakan metode keamanan untuk pengguna berisi identitas dari dua sumber informasi. Ada beberapa pilihan informasi yang dapat ditambahkan:</p>
+        <ul>
+          <li>Kode verifikasi melalui SMS atau aplikasi</li>
+          <li>Autentikasi biometrik (sidik jari, wajah)</li>
+          <li>Kode unik melalui e-mail</li>
+        </ul>
+
+        <h2 id="2.6">2.6 Pemanfaatan Platform Lokapasar dan Perbankan Digital</h2>
+
+        <h3>A. Platform Lokapasar (Marketplace)</h3>
+        <p>
+          Seiring berkembangnya teknologi dan digitalisasi di berbagai bidang, transaksi jual beli online pun semakin banyak digandrungi. Dalam beberapa tahun terakhir ini, aktivitas belanja di berbagai platform daring terus mengalami peningkatan. Berbeda dengan pasar konvensional yang perlu menyediakan toko secara fisik, lokapasar atau marketplace online bergantung pada media digital dan internet. Jangkauan pasar online ada yang hanya dalam lingkup regional saja dan ada pula yang lingkup pemasarannya secara global.
+        </p>
+        <p>
+          Penggunaan platform lokapasar atau marketplace daring memiliki dampak yang positif bagi pelanggan maupun pengusaha. Pengguna marketplace online bisa mendapatkan produk yang mungkin tidak dapat ditemukan di daerah terdekat. Kemudahan transaksi dan banyaknya pilihan produk yang tersedia menjadi kelebihan tersendiri dalam penggunaan marketplace online. Berikut ini beberapa contoh lokapasar atau marketplace online yang banyak digunakan, khususnya di Indonesia.
+        </p>
+        <p>Beberapa contoh marketplace online yang banyak digunakan di Indonesia:</p>
+
+        <h4>1. Tokopedia</h4>
+        <p>Marketplace karya anak bangsa Indonesia yang berdiri pada 17 Agustus 2009, didirikan oleh William Tanuwijaya dan Leontinus Alpha Edison.</p>
+
+        <h4>2. Shopee</h4>
+        <p>Platform e-commerce yang paling banyak digunakan di Asia Tenggara, termasuk Indonesia.</p>
+
+        <h4>3. Amazon</h4>
+        <p>Situs marketplace luar negeri yang didirikan tahun 1994 oleh Jeff Bezos dengan kantor pusat di Seattle, Washington, Amerika Serikat.</p>
+
+        <h3>B. Perbankan Digital</h3>
+        <p>Bank digital merupakan layanan perbankan yang beroperasi secara online melalui platform digital. Layanan perbankan digital meliputi:</p>
+        <ul>
+          <li>Internet Banking</li>
+          <li>Phone Banking</li>
+          <li>SMS Banking</li>
+          <li>Mobile Banking</li>
+        </ul>
+
+        <h4>Risiko Perbankan Digital</h4>
+        <ul>
+          <li>Risiko Keamanan Siber (Phishing, Malware, Denial of Service)</li>
+          <li>Risiko Perlindungan Data Pribadi</li>
+          <li>Risiko Literasi Keuangan Digital</li>
+        </ul>
+
+        <h3>C. Dompet Digital dan Keamanannya</h3>
+        <p>Dompet digital (e-wallet) merupakan layanan berbasis aplikasi yang memudahkan pengguna untuk menyimpan uang dan menggunakannya sebagai metode pembayaran. Contoh dompet digital populer di Indonesia:</p>
+        <ul>
+          <li><strong>DANA</strong> - Diluncurkan 5 November 2018</li>
+          <li><strong>ShopeePay</strong> - Terintegrasi dengan aplikasi Shopee</li>
+          <li><strong>GoPay</strong> - Terintegrasi dengan aplikasi Gojek</li>
+          <li><strong>OVO</strong> - Dapat digunakan di berbagai merchant</li>
+          <li><strong>LinkAja</strong> - Dikembangkan oleh Telkomsel, BRI, BNI, Mandiri</li>
+        </ul>
+
+        <h4>Kelebihan:</h4>
+        <ul>
+          <li>Transaksi keuangan dilakukan secara instan.</li>
+          <li>Dapat dipakai kapan saja.</li>
+          <li>Terdapat riwayat transaksi.</li>
+          <li>Banyak promo yang menggiurkan.</li>
+          <li>Transaksi sesuai harga (tidak memerlukan kembalian).</li>
+        </ul>
+
+        <h4>Kekurangan:</h4>
+        <ul>
+          <li>Tidak semua tempat menerima pembayaran dengan dompet digital.</li>
+          <li>Adanya biaya admin untuk beberapa transaksi.</li>
+          <li>Hidup menjadi lebih konsumtif.</li>
+          <li>Adanya risiko keamanan terkait dengan penyalahgunaan data pribadi atau dana pengguna dan risiko kehilangan akses atau kerusakan perangkat.</li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="side">
+      <div class="reze">
+        <img src="https://i.pinimg.com/736x/72/8a/08/728a08aad796ffa814638c7da9e5b360.jpg" style="width:100%; height:100%;object-fit:cover;">
+      </div>
+      <div class="side-box handwritten">could you please love me?</div>
+      <div class="side-box">Reze (<strong>レゼ</strong>), also known as Bomb Girl (ボムガール Bomu Gāru?), is the Bomb Devil (爆弾の悪魔 Bomu no Akuma?) Hybrid from the Soviet Union, who was sent to Japan with the mission of stealing the Chainsaw Man's heart. </div>
+      <div class="side-box" style="text-align: center;">✦. ──✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦── .✦</div>
+    </div>
+
+    <div class="footer">
+      <div class="panel"><img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2024/08/bdc84f08-06f7-40d0-95d7-a29b091564db.jpeg?q=49&fit=crop&w=825&dpr=2"></div>
+      <div class="panel"><img src="https://i.pinimg.com/736x/27/5f/0f/275f0ff8ec3658f8e75f9fc6218f4d80.jpg"></div>
+      <div class="panel"><img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2023/12/img_0623.jpeg?q=70&fit=crop&w=825&dpr=1"></div>
+    </div>
+  </div>
+  
+
+
+</body>
+</html>
