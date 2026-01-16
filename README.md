@@ -1,6 +1,6 @@
 # Educational HTML Templates
 
-![Desktop Preview](preview/Wallpaper.png)
+<img src="preview/Wallpaper.png" width="500">
 
 A collection of frontend-only websites created to present school learning 
 materials in HTML format, mainly for ICT (TIK) assignments and my way to study web design
